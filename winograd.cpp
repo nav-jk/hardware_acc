@@ -17,6 +17,7 @@ void winograd_conv(float* in_g, float* in_d, float* out_y) {
     float Bd[4][4];
     float V[4][4];
     float M[4][4];
+    float At[2][4];
     float Y[2][2];
 
     // ---- Array partitioning for maximum parallelism ----
@@ -28,6 +29,8 @@ void winograd_conv(float* in_g, float* in_d, float* out_y) {
 #pragma HLS ARRAY_PARTITION variable=V   complete
 #pragma HLS ARRAY_PARTITION variable=M   complete
 #pragma HLS ARRAY_PARTITION variable=Y   complete
+#pragma HLS ARRAY_PARTITION variable=At complete
+
 
 // ---- Read filter g (3x3) ----
 read_g:
@@ -102,15 +105,23 @@ compute_M:
         }
     }
 
-    // ---- Step 4: Compute output Y ----
+    // ---- Step 4a: Compute output AT * M ----
+compute_AT:
+        for(int i=0;i<4;i++){
+#pragma HLS UNROLL
+        At[0][i] = M[0][i]+M[1][i]+M[2][i];
+        At[1][i] = M[1][i]-M[2][i]-M[3][i];
+    }
+
+    // ---- Step 4b: Compute output Y ----
 compute_Y:
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
 #pragma HLS UNROLL
-            if(i==0 && j==0)      Y[i][j] = M[0][0] + M[0][1] + M[0][2];
-            else if(i==0 && j==1) Y[i][j] = M[0][1] - M[0][2] - M[0][3];
-            else if(i==1 && j==0) Y[i][j] = M[1][0] + M[1][1] + M[1][2];
-            else                   Y[i][j] = M[1][1] - M[1][2] - M[1][3];
+            if(i==0 && j==0)      Y[i][j] = At[0][0] + At[0][1] + At[0][2];
+            else if(i==0 && j==1) Y[i][j] = At[0][1] - At[0][2] - At[0][3];
+            else if(i==1 && j==0) Y[i][j] = At[1][0] + At[1][1] + At[1][2];
+            else                   Y[i][j] = At[1][1] - At[1][2] - At[1][3];
         }
     }
 
