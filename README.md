@@ -1,15 +1,8 @@
-# Winograd Convolution HLS (2x2 Output, 3x3 Filter)
-
 ## Overview
-
-This code implements a **Winograd convolution** optimized for **FPGA using Vivado HLS / Vitis HLS**.  
-
+  
 - Input: 3x3 filter (`g`) and 4x4 input tile (`d`)  
 - Output: 2x2 tile (`Y`)  
 
-The focus of this documentation is on **parallelization**, **array partitioning**, and **loop unrolling**, which maximize throughput on FPGA hardware.
-
----
 
 ## Matrix Overview
 
