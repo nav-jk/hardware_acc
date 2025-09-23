@@ -20,18 +20,14 @@ void winograd_conv(float* in_g, float* in_d, float* out_y) {
     float Y[2][2];
 
     // ---- Array partitioning for maximum parallelism ----
-#pragma HLS ARRAY_PARTITION variable=g dim=2 complete
-#pragma HLS ARRAY_PARTITION variable=Gg dim=2 complete
-#pragma HLS ARRAY_PARTITION variable=U dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=U dim=2 complete
-#pragma HLS ARRAY_PARTITION variable=d dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=Bd dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=V dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=V dim=2 complete
-#pragma HLS ARRAY_PARTITION variable=M dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=M dim=2 complete
-#pragma HLS ARRAY_PARTITION variable=Y dim=1 complete
-#pragma HLS ARRAY_PARTITION variable=Y dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=g   dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=Gg  dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=U   complete
+#pragma HLS ARRAY_PARTITION variable=d   dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=Bd  dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=V   complete
+#pragma HLS ARRAY_PARTITION variable=M   complete
+#pragma HLS ARRAY_PARTITION variable=Y   complete
 
     // ---- Read filter g ----
 read_g:
@@ -101,10 +97,16 @@ compute_M:
     }
 
     // ---- Step 4: Compute output Y ----
-Y[0][0] = M[0][0]+M[0][1]+M[0][2];
-Y[0][1] = M[0][1]-M[0][2]-M[0][3];
-Y[1][0] = M[1][0]+M[1][1]+M[1][2];
-Y[1][1] = M[1][1]-M[1][2]-M[1][3];
+compute_Y:
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+#pragma HLS UNROLL
+            if(i==0 && j==0)      Y[i][j] = M[0][0] + M[0][1] + M[0][2];
+            else if(i==0 && j==1) Y[i][j] = M[0][1] - M[0][2] - M[0][3];
+            else if(i==1 && j==0) Y[i][j] = M[1][0] + M[1][1] + M[1][2];
+            else                   Y[i][j] = M[1][1] - M[1][2] - M[1][3];
+        }
+    }
 
     // ---- Write results back ----
 write_y:
