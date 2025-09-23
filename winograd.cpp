@@ -29,19 +29,25 @@ void winograd_conv(float* in_g, float* in_d, float* out_y) {
 #pragma HLS ARRAY_PARTITION variable=M   complete
 #pragma HLS ARRAY_PARTITION variable=Y   complete
 
-    // ---- Read filter g ----
+// ---- Read filter g (3x3) ----
 read_g:
-    for (int i = 0, idx = 0; i < 3; i++)
-        for (int j = 0; j < 3; j++, idx++)
+for (int itr = 0, i = 0, j = 0; itr < 9; itr++, j++) {
 #pragma HLS LOOP_TRIPCOUNT min=9 max=9
-            g[i][j] = in_g[idx];
+    if (j == 3) { 
+        j = 0; 
+        i++; }
+    g[i][j] = in_g[itr];
+}
 
-    // ---- Read input d ----
+// ---- Read input d (4x4) ----
 read_d:
-    for (int i = 0, idx = 0; i < 4; i++)
-        for (int j = 0; j < 4; j++, idx++)
+for (int itr = 0, i = 0, j = 0; itr < 16; itr++, j++) {
 #pragma HLS LOOP_TRIPCOUNT min=16 max=16
-            d[i][j] = in_d[idx];
+    if (j == 4) { 
+        j = 0; 
+        i++; }
+    d[i][j] = in_d[itr];
+}
 
     // ---- Step 1a: Gg = G * g ----
 compute_Gg:
