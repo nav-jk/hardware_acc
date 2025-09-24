@@ -1,0 +1,207 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=winograd" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in_g depth=9" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in_d depth=16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out_y depth=4" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=g dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Gg dim=2 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=U complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=d dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Bd dim=1 complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=V complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=M complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Y complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=9 max=9" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=16 max=16" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:56:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:58:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:69:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:79:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:89:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:99:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:101:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:110:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:121:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="winograd.cpp:123:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="winograd" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'write_y' (winograd.cpp:120:5) in function 'winograd' completely with a factor of 2">
+        <args Factor="2" LoopLoc="winograd.cpp:120:5" LoopName="write_y"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_122_4' (winograd.cpp:122:20) in function 'winograd' completely with a factor of 2">
+        <args Factor="2" LoopLoc="winograd.cpp:122:20" LoopName="VITIS_LOOP_122_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_109_3' (winograd.cpp:109:27) in function 'winograd' completely with a factor of 2">
+        <args Factor="2" LoopLoc="winograd.cpp:109:27" LoopName="VITIS_LOOP_109_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'compute_M' (winograd.cpp:98:5) in function 'winograd' completely with a factor of 4">
+        <args Factor="4" LoopLoc="winograd.cpp:98:5" LoopName="compute_M"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_100_2' (winograd.cpp:100:20) in function 'winograd' completely with a factor of 4">
+        <args Factor="4" LoopLoc="winograd.cpp:100:20" LoopName="VITIS_LOOP_100_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'compute_V' (winograd.cpp:88:5) in function 'winograd' completely with a factor of 4">
+        <args Factor="4" LoopLoc="winograd.cpp:88:5" LoopName="compute_V"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'compute_Bd' (winograd.cpp:78:5) in function 'winograd' completely with a factor of 4">
+        <args Factor="4" LoopLoc="winograd.cpp:78:5" LoopName="compute_Bd"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'compute_U' (winograd.cpp:68:5) in function 'winograd' completely with a factor of 4">
+        <args Factor="4" LoopLoc="winograd.cpp:68:5" LoopName="compute_U"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'compute_Gg' (winograd.cpp:55:5) in function 'winograd' completely with a factor of 4">
+        <args Factor="4" LoopLoc="winograd.cpp:55:5" LoopName="compute_Gg"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="winograd.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_57_1' (winograd.cpp:57:19) in function 'winograd' completely with a factor of 3">
+        <args Factor="3" LoopLoc="winograd.cpp:57:19" LoopName="VITIS_LOOP_57_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Applying array_partition to 'g': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="g"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Applying array_partition to 'd': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="d"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="Applying array_partition to 'Y': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="Y"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-421" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Automatically partitioning small array 'g' completely based on array size.">
+        <args Value="g"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-421" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Automatically partitioning small array 'd' completely based on array size.">
+        <args Value="d"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-421" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="Automatically partitioning small array 'Y' completely based on array size.">
+        <args Value="Y"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="array_partition dim=1 type=complete  variable=g_0 1 winograd winograd.cpp:13:8 g_0">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=g_0" PragmaType="array_partition" VarName="g_0" varLoc="winograd.cpp:13:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'g_0' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="g_0" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="array_partition dim=1 type=complete  variable=g_1 1 winograd winograd.cpp:13:8 g_1">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=g_1" PragmaType="array_partition" VarName="g_1" varLoc="winograd.cpp:13:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'g_1' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="g_1" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="array_partition dim=1 type=complete  variable=g_2 1 winograd winograd.cpp:13:8 g_2">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=g_2" PragmaType="array_partition" VarName="g_2" varLoc="winograd.cpp:13:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'g_2' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="g_2" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="array_partition dim=1 type=complete  variable=d_0 1 winograd winograd.cpp:14:11 d_0">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=d_0" PragmaType="array_partition" VarName="d_0" varLoc="winograd.cpp:14:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'd_0' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="d_0" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="array_partition dim=1 type=complete  variable=d_1 1 winograd winograd.cpp:14:11 d_1">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=d_1" PragmaType="array_partition" VarName="d_1" varLoc="winograd.cpp:14:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'd_1' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="d_1" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="array_partition dim=1 type=complete  variable=d_2 1 winograd winograd.cpp:14:11 d_2">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=d_2" PragmaType="array_partition" VarName="d_2" varLoc="winograd.cpp:14:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'd_2' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="d_2" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="array_partition dim=1 type=complete  variable=d_3 1 winograd winograd.cpp:14:11 d_3">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=d_3" PragmaType="array_partition" VarName="d_3" varLoc="winograd.cpp:14:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'd_3' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="d_3" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="array_partition dim=1 type=complete  variable=Y_0 1 winograd winograd.cpp:20:11 Y_0">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=Y_0" PragmaType="array_partition" VarName="Y_0" varLoc="winograd.cpp:20:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'Y_0' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="Y_0" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="array_partition dim=1 type=complete  variable=Y_1 1 winograd winograd.cpp:20:11 Y_1">
+        <args PragmaFunction="winograd" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=Y_1" PragmaType="array_partition" VarName="Y_1" varLoc="winograd.cpp:20:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'Y_1' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="Y_1" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Applying array_partition to 'g_0': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="g_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Applying array_partition to 'g_1': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="g_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:13:8" msg_body="Applying array_partition to 'g_2': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="g_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Applying array_partition to 'd_0': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="d_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Applying array_partition to 'd_1': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="d_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Applying array_partition to 'd_2': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="d_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:14:11" msg_body="Applying array_partition to 'd_3': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="d_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="Applying array_partition to 'Y_0': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="Y_0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="winograd.cpp:20:11" msg_body="Applying array_partition to 'Y_1': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="Y_1"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

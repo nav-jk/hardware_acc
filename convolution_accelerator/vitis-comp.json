@@ -1,0 +1,13 @@
+{
+  "name": "convolution_accelerator",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "convolution_accelerator"
+  },
+  "useSysrootToolchain": false,
+  "template": "empty_hls_component"
+}

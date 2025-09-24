@@ -1,0 +1,987 @@
+
+
+================================================================
+== Vitis HLS Report for 'winograd'
+================================================================
+* Date:           Tue Sep 23 21:11:02 2025
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        convolution_accelerator
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: virtexu
+* Target device:  xcvu440_CIV-flgb2377-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       96|       96|  0.960 us|  0.960 us|   97|   97|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 64
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 65 [1/1] (1.00ns)   --->   "%out_y_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %out_y"   --->   Operation 65 'read' 'out_y_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 66 [1/1] (1.00ns)   --->   "%in_d_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %in_d"   --->   Operation 66 'read' 'in_d_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 67 [1/1] (1.00ns)   --->   "%in_g_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %in_g"   --->   Operation 67 'read' 'in_g_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%p_loc11 = alloca i64 1"   --->   Operation 68 'alloca' 'p_loc11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%p_loc10 = alloca i64 1"   --->   Operation 69 'alloca' 'p_loc10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%p_loc9 = alloca i64 1"   --->   Operation 70 'alloca' 'p_loc9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%p_loc = alloca i64 1"   --->   Operation 71 'alloca' 'p_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%d_11_load_loc = alloca i64 1"   --->   Operation 72 'alloca' 'd_11_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%d_10_load_loc = alloca i64 1"   --->   Operation 73 'alloca' 'd_10_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%d_9_load_loc = alloca i64 1"   --->   Operation 74 'alloca' 'd_9_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%d_8_load_loc = alloca i64 1"   --->   Operation 75 'alloca' 'd_8_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%d_7_load_loc = alloca i64 1"   --->   Operation 76 'alloca' 'd_7_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%d_6_load_loc = alloca i64 1"   --->   Operation 77 'alloca' 'd_6_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%d_5_load_loc = alloca i64 1"   --->   Operation 78 'alloca' 'd_5_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%d_4_load_loc = alloca i64 1"   --->   Operation 79 'alloca' 'd_4_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%d_3_load_loc = alloca i64 1"   --->   Operation 80 'alloca' 'd_3_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%d_2_load_loc = alloca i64 1"   --->   Operation 81 'alloca' 'd_2_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%d_1_load_loc = alloca i64 1"   --->   Operation 82 'alloca' 'd_1_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%d_load_loc = alloca i64 1"   --->   Operation 83 'alloca' 'd_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%g_8_load_loc = alloca i64 1"   --->   Operation 84 'alloca' 'g_8_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%g_7_load_loc = alloca i64 1"   --->   Operation 85 'alloca' 'g_7_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%g_6_load_loc = alloca i64 1"   --->   Operation 86 'alloca' 'g_6_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%g_5_load_loc = alloca i64 1"   --->   Operation 87 'alloca' 'g_5_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%g_4_load_loc = alloca i64 1"   --->   Operation 88 'alloca' 'g_4_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%g_3_load_loc = alloca i64 1"   --->   Operation 89 'alloca' 'g_3_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%g_2_load_loc = alloca i64 1"   --->   Operation 90 'alloca' 'g_2_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%g_1_load_loc = alloca i64 1"   --->   Operation 91 'alloca' 'g_1_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%g_load_loc = alloca i64 1"   --->   Operation 92 'alloca' 'g_load_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %in_g_read, i32 2, i32 63" [winograd.cpp:34]   --->   Operation 93 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%trunc_ln1 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %in_d_read, i32 2, i32 63" [winograd.cpp:45]   --->   Operation 94 'partselect' 'trunc_ln1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%trunc_ln2 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %out_y_read, i32 2, i32 63" [winograd.cpp:127]   --->   Operation 95 'partselect' 'trunc_ln2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%sext_ln127 = sext i62 %trunc_ln2" [winograd.cpp:127]   --->   Operation 96 'sext' 'sext_ln127' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%gmem_addr_2 = getelementptr i32 %gmem, i64 %sext_ln127" [winograd.cpp:127]   --->   Operation 97 'getelementptr' 'gmem_addr_2' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%sext_ln34 = sext i62 %trunc_ln" [winograd.cpp:34]   --->   Operation 98 'sext' 'sext_ln34' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i32 %gmem, i64 %sext_ln34" [winograd.cpp:34]   --->   Operation 99 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 100 [8/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 100 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 101 [7/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 101 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 102 [6/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 102 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 103 [5/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 103 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 104 [4/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 104 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 105 [3/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 105 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 106 [2/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 106 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 107 [1/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr, i64 9" [winograd.cpp:34]   --->   Operation 107 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 108 [2/2] (0.00ns)   --->   "%call_ln34 = call void @winograd_Pipeline_read_g, i32 %gmem, i62 %trunc_ln, i32 %g_load_loc, i32 %g_1_load_loc, i32 %g_2_load_loc, i32 %g_3_load_loc, i32 %g_4_load_loc, i32 %g_5_load_loc, i32 %g_6_load_loc, i32 %g_7_load_loc, i32 %g_8_load_loc" [winograd.cpp:34]   --->   Operation 108 'call' 'call_ln34' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 11 <SV = 10> <Delay = 1.73>
+ST_11 : Operation 109 [1/2] (1.73ns)   --->   "%call_ln34 = call void @winograd_Pipeline_read_g, i32 %gmem, i62 %trunc_ln, i32 %g_load_loc, i32 %g_1_load_loc, i32 %g_2_load_loc, i32 %g_3_load_loc, i32 %g_4_load_loc, i32 %g_5_load_loc, i32 %g_6_load_loc, i32 %g_7_load_loc, i32 %g_8_load_loc" [winograd.cpp:34]   --->   Operation 109 'call' 'call_ln34' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 110 [1/1] (0.00ns)   --->   "%g_load = load i32 %g_load_loc"   --->   Operation 110 'load' 'g_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 111 [1/1] (0.00ns)   --->   "%g_1_load = load i32 %g_1_load_loc"   --->   Operation 111 'load' 'g_1_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 112 [1/1] (0.00ns)   --->   "%g_3_load = load i32 %g_3_load_loc"   --->   Operation 112 'load' 'g_3_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 113 [1/1] (0.00ns)   --->   "%g_4_load = load i32 %g_4_load_loc"   --->   Operation 113 'load' 'g_4_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 114 [1/1] (0.00ns)   --->   "%sext_ln45 = sext i62 %trunc_ln1" [winograd.cpp:45]   --->   Operation 114 'sext' 'sext_ln45' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 115 [1/1] (0.00ns)   --->   "%gmem_addr_1 = getelementptr i32 %gmem, i64 %sext_ln45" [winograd.cpp:45]   --->   Operation 115 'getelementptr' 'gmem_addr_1' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 116 [8/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 116 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 117 [5/5] (6.52ns)   --->   "%add_1 = fadd i32 %g_load, i32 %g_1_load" [winograd.cpp:60]   --->   Operation 117 'fadd' 'add_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 118 [5/5] (6.52ns)   --->   "%add_1_1 = fadd i32 %g_3_load, i32 %g_4_load" [winograd.cpp:60]   --->   Operation 118 'fadd' 'add_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 119 [7/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 119 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 120 [4/5] (6.52ns)   --->   "%add_1 = fadd i32 %g_load, i32 %g_1_load" [winograd.cpp:60]   --->   Operation 120 'fadd' 'add_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 121 [4/5] (6.52ns)   --->   "%add_1_1 = fadd i32 %g_3_load, i32 %g_4_load" [winograd.cpp:60]   --->   Operation 121 'fadd' 'add_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 122 [6/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 122 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 123 [3/5] (6.52ns)   --->   "%add_1 = fadd i32 %g_load, i32 %g_1_load" [winograd.cpp:60]   --->   Operation 123 'fadd' 'add_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 124 [3/5] (6.52ns)   --->   "%add_1_1 = fadd i32 %g_3_load, i32 %g_4_load" [winograd.cpp:60]   --->   Operation 124 'fadd' 'add_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 125 [5/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 125 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 126 [2/5] (6.52ns)   --->   "%add_1 = fadd i32 %g_load, i32 %g_1_load" [winograd.cpp:60]   --->   Operation 126 'fadd' 'add_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 127 [2/5] (6.52ns)   --->   "%add_1_1 = fadd i32 %g_3_load, i32 %g_4_load" [winograd.cpp:60]   --->   Operation 127 'fadd' 'add_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 128 [4/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 128 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 129 [1/5] (6.52ns)   --->   "%add_1 = fadd i32 %g_load, i32 %g_1_load" [winograd.cpp:60]   --->   Operation 129 'fadd' 'add_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 130 [1/5] (6.52ns)   --->   "%add_1_1 = fadd i32 %g_3_load, i32 %g_4_load" [winograd.cpp:60]   --->   Operation 130 'fadd' 'add_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 131 [1/1] (0.00ns)   --->   "%g_2_load = load i32 %g_2_load_loc"   --->   Operation 131 'load' 'g_2_load' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 132 [1/1] (0.00ns)   --->   "%g_5_load = load i32 %g_5_load_loc"   --->   Operation 132 'load' 'g_5_load' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 133 [1/1] (0.00ns)   --->   "%g_6_load = load i32 %g_6_load_loc"   --->   Operation 133 'load' 'g_6_load' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 134 [1/1] (0.00ns)   --->   "%g_7_load = load i32 %g_7_load_loc"   --->   Operation 134 'load' 'g_7_load' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 135 [3/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 135 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 136 [5/5] (6.52ns)   --->   "%add59_1 = fadd i32 %add_1, i32 %g_2_load" [winograd.cpp:60]   --->   Operation 136 'fadd' 'add59_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 137 [5/5] (6.52ns)   --->   "%add59_1_1 = fadd i32 %add_1_1, i32 %g_5_load" [winograd.cpp:60]   --->   Operation 137 'fadd' 'add59_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 138 [5/5] (6.52ns)   --->   "%add_1_2 = fadd i32 %g_6_load, i32 %g_7_load" [winograd.cpp:60]   --->   Operation 138 'fadd' 'add_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 7.30>
+ST_18 : Operation 139 [2/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 139 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 140 [4/5] (6.52ns)   --->   "%add59_1 = fadd i32 %add_1, i32 %g_2_load" [winograd.cpp:60]   --->   Operation 140 'fadd' 'add59_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 141 [4/5] (6.52ns)   --->   "%add59_1_1 = fadd i32 %add_1_1, i32 %g_5_load" [winograd.cpp:60]   --->   Operation 141 'fadd' 'add59_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 142 [4/5] (6.52ns)   --->   "%add_1_2 = fadd i32 %g_6_load, i32 %g_7_load" [winograd.cpp:60]   --->   Operation 142 'fadd' 'add_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 7.30>
+ST_19 : Operation 143 [1/8] (7.30ns)   --->   "%empty_22 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %gmem_addr_1, i64 16" [winograd.cpp:45]   --->   Operation 143 'readreq' 'empty_22' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 144 [3/5] (6.52ns)   --->   "%add59_1 = fadd i32 %add_1, i32 %g_2_load" [winograd.cpp:60]   --->   Operation 144 'fadd' 'add59_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 145 [3/5] (6.52ns)   --->   "%add59_1_1 = fadd i32 %add_1_1, i32 %g_5_load" [winograd.cpp:60]   --->   Operation 145 'fadd' 'add59_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 146 [3/5] (6.52ns)   --->   "%add_1_2 = fadd i32 %g_6_load, i32 %g_7_load" [winograd.cpp:60]   --->   Operation 146 'fadd' 'add_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.52>
+ST_20 : Operation 147 [2/2] (0.00ns)   --->   "%call_ln45 = call void @winograd_Pipeline_read_d, i32 %gmem, i62 %trunc_ln1, i32 %d_load_loc, i32 %d_1_load_loc, i32 %d_2_load_loc, i32 %d_3_load_loc, i32 %d_4_load_loc, i32 %d_5_load_loc, i32 %d_6_load_loc, i32 %d_7_load_loc, i32 %d_8_load_loc, i32 %d_9_load_loc, i32 %d_10_load_loc, i32 %d_11_load_loc" [winograd.cpp:45]   --->   Operation 147 'call' 'call_ln45' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_20 : Operation 148 [2/5] (6.52ns)   --->   "%add59_1 = fadd i32 %add_1, i32 %g_2_load" [winograd.cpp:60]   --->   Operation 148 'fadd' 'add59_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 149 [2/5] (6.52ns)   --->   "%add59_1_1 = fadd i32 %add_1_1, i32 %g_5_load" [winograd.cpp:60]   --->   Operation 149 'fadd' 'add59_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 150 [2/5] (6.52ns)   --->   "%add_1_2 = fadd i32 %g_6_load, i32 %g_7_load" [winograd.cpp:60]   --->   Operation 150 'fadd' 'add_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 6.52>
+ST_21 : Operation 151 [1/2] (1.79ns)   --->   "%call_ln45 = call void @winograd_Pipeline_read_d, i32 %gmem, i62 %trunc_ln1, i32 %d_load_loc, i32 %d_1_load_loc, i32 %d_2_load_loc, i32 %d_3_load_loc, i32 %d_4_load_loc, i32 %d_5_load_loc, i32 %d_6_load_loc, i32 %d_7_load_loc, i32 %d_8_load_loc, i32 %d_9_load_loc, i32 %d_10_load_loc, i32 %d_11_load_loc" [winograd.cpp:45]   --->   Operation 151 'call' 'call_ln45' <Predicate = true> <Delay = 1.79> <CoreType = "Generic">   --->   Generic Core
+ST_21 : Operation 152 [1/5] (6.52ns)   --->   "%add59_1 = fadd i32 %add_1, i32 %g_2_load" [winograd.cpp:60]   --->   Operation 152 'fadd' 'add59_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 153 [1/5] (6.52ns)   --->   "%add59_1_1 = fadd i32 %add_1_1, i32 %g_5_load" [winograd.cpp:60]   --->   Operation 153 'fadd' 'add59_1_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 154 [1/5] (6.52ns)   --->   "%add_1_2 = fadd i32 %g_6_load, i32 %g_7_load" [winograd.cpp:60]   --->   Operation 154 'fadd' 'add_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 155 [5/5] (6.52ns)   --->   "%add = fadd i32 %g_load, i32 %g_3_load" [winograd.cpp:71]   --->   Operation 155 'fadd' 'add' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 6.52>
+ST_22 : Operation 156 [1/1] (0.00ns)   --->   "%g_8_load = load i32 %g_8_load_loc"   --->   Operation 156 'load' 'g_8_load' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 157 [4/4] (4.62ns)   --->   "%mul_1 = fmul i32 %add59_1, i32 0.5" [winograd.cpp:60]   --->   Operation 157 'fmul' 'mul_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 158 [4/4] (4.62ns)   --->   "%mul_1_1 = fmul i32 %add59_1_1, i32 0.5" [winograd.cpp:60]   --->   Operation 158 'fmul' 'mul_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 159 [5/5] (6.52ns)   --->   "%add59_1_2 = fadd i32 %add_1_2, i32 %g_8_load" [winograd.cpp:60]   --->   Operation 159 'fadd' 'add59_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 160 [4/5] (6.52ns)   --->   "%add = fadd i32 %g_load, i32 %g_3_load" [winograd.cpp:71]   --->   Operation 160 'fadd' 'add' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 6.52>
+ST_23 : Operation 161 [3/4] (4.62ns)   --->   "%mul_1 = fmul i32 %add59_1, i32 0.5" [winograd.cpp:60]   --->   Operation 161 'fmul' 'mul_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 162 [3/4] (4.62ns)   --->   "%mul_1_1 = fmul i32 %add59_1_1, i32 0.5" [winograd.cpp:60]   --->   Operation 162 'fmul' 'mul_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 163 [4/5] (6.52ns)   --->   "%add59_1_2 = fadd i32 %add_1_2, i32 %g_8_load" [winograd.cpp:60]   --->   Operation 163 'fadd' 'add59_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 164 [3/5] (6.52ns)   --->   "%add = fadd i32 %g_load, i32 %g_3_load" [winograd.cpp:71]   --->   Operation 164 'fadd' 'add' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 6.52>
+ST_24 : Operation 165 [2/4] (4.62ns)   --->   "%mul_1 = fmul i32 %add59_1, i32 0.5" [winograd.cpp:60]   --->   Operation 165 'fmul' 'mul_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 166 [2/4] (4.62ns)   --->   "%mul_1_1 = fmul i32 %add59_1_1, i32 0.5" [winograd.cpp:60]   --->   Operation 166 'fmul' 'mul_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 167 [3/5] (6.52ns)   --->   "%add59_1_2 = fadd i32 %add_1_2, i32 %g_8_load" [winograd.cpp:60]   --->   Operation 167 'fadd' 'add59_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 168 [2/5] (6.52ns)   --->   "%add = fadd i32 %g_load, i32 %g_3_load" [winograd.cpp:71]   --->   Operation 168 'fadd' 'add' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 6.52>
+ST_25 : Operation 169 [1/1] (0.00ns)   --->   "%d_load = load i32 %d_load_loc"   --->   Operation 169 'load' 'd_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 170 [1/1] (0.00ns)   --->   "%d_1_load = load i32 %d_1_load_loc"   --->   Operation 170 'load' 'd_1_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 171 [1/1] (0.00ns)   --->   "%d_2_load = load i32 %d_2_load_loc"   --->   Operation 171 'load' 'd_2_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 172 [1/1] (0.00ns)   --->   "%d_4_load = load i32 %d_4_load_loc"   --->   Operation 172 'load' 'd_4_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 173 [1/1] (0.00ns)   --->   "%d_5_load = load i32 %d_5_load_loc"   --->   Operation 173 'load' 'd_5_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 174 [1/1] (0.00ns)   --->   "%d_6_load = load i32 %d_6_load_loc"   --->   Operation 174 'load' 'd_6_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 175 [1/1] (0.00ns)   --->   "%d_8_load = load i32 %d_8_load_loc"   --->   Operation 175 'load' 'd_8_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 176 [1/1] (0.00ns)   --->   "%d_9_load = load i32 %d_9_load_loc"   --->   Operation 176 'load' 'd_9_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 177 [1/1] (0.00ns)   --->   "%d_10_load = load i32 %d_10_load_loc"   --->   Operation 177 'load' 'd_10_load' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 178 [1/4] (4.62ns)   --->   "%mul_1 = fmul i32 %add59_1, i32 0.5" [winograd.cpp:60]   --->   Operation 178 'fmul' 'mul_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 179 [1/4] (4.62ns)   --->   "%mul_1_1 = fmul i32 %add59_1_1, i32 0.5" [winograd.cpp:60]   --->   Operation 179 'fmul' 'mul_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 180 [2/5] (6.52ns)   --->   "%add59_1_2 = fadd i32 %add_1_2, i32 %g_8_load" [winograd.cpp:60]   --->   Operation 180 'fadd' 'add59_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 181 [1/5] (6.52ns)   --->   "%add = fadd i32 %g_load, i32 %g_3_load" [winograd.cpp:71]   --->   Operation 181 'fadd' 'add' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 182 [5/5] (6.52ns)   --->   "%sub1 = fsub i32 %d_load, i32 %d_8_load" [winograd.cpp:80]   --->   Operation 182 'fsub' 'sub1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 183 [5/5] (6.52ns)   --->   "%add3 = fadd i32 %d_4_load, i32 %d_8_load" [winograd.cpp:81]   --->   Operation 183 'fadd' 'add3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 184 [5/5] (6.52ns)   --->   "%sub160_1 = fsub i32 %d_1_load, i32 %d_9_load" [winograd.cpp:80]   --->   Operation 184 'fsub' 'sub160_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 185 [5/5] (6.52ns)   --->   "%add170_1 = fadd i32 %d_5_load, i32 %d_9_load" [winograd.cpp:81]   --->   Operation 185 'fadd' 'add170_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 186 [5/5] (6.52ns)   --->   "%sub160_2 = fsub i32 %d_2_load, i32 %d_10_load" [winograd.cpp:80]   --->   Operation 186 'fsub' 'sub160_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 187 [5/5] (6.52ns)   --->   "%add170_2 = fadd i32 %d_6_load, i32 %d_10_load" [winograd.cpp:81]   --->   Operation 187 'fadd' 'add170_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 6.52>
+ST_26 : Operation 188 [1/5] (6.52ns)   --->   "%add59_1_2 = fadd i32 %add_1_2, i32 %g_8_load" [winograd.cpp:60]   --->   Operation 188 'fadd' 'add59_1_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 189 [5/5] (6.52ns)   --->   "%add1 = fadd i32 %add, i32 %g_6_load" [winograd.cpp:71]   --->   Operation 189 'fadd' 'add1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 190 [5/5] (6.52ns)   --->   "%sub = fsub i32 %g_load, i32 %g_3_load" [winograd.cpp:72]   --->   Operation 190 'fsub' 'sub' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 191 [5/5] (6.52ns)   --->   "%add116_1 = fadd i32 %mul_1, i32 %mul_1_1" [winograd.cpp:71]   --->   Operation 191 'fadd' 'add116_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 192 [5/5] (6.52ns)   --->   "%sub131_1 = fsub i32 %mul_1, i32 %mul_1_1" [winograd.cpp:72]   --->   Operation 192 'fsub' 'sub131_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 193 [4/5] (6.52ns)   --->   "%sub1 = fsub i32 %d_load, i32 %d_8_load" [winograd.cpp:80]   --->   Operation 193 'fsub' 'sub1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 194 [4/5] (6.52ns)   --->   "%add3 = fadd i32 %d_4_load, i32 %d_8_load" [winograd.cpp:81]   --->   Operation 194 'fadd' 'add3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 195 [4/5] (6.52ns)   --->   "%sub160_1 = fsub i32 %d_1_load, i32 %d_9_load" [winograd.cpp:80]   --->   Operation 195 'fsub' 'sub160_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 196 [4/5] (6.52ns)   --->   "%add170_1 = fadd i32 %d_5_load, i32 %d_9_load" [winograd.cpp:81]   --->   Operation 196 'fadd' 'add170_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 197 [4/5] (6.52ns)   --->   "%sub160_2 = fsub i32 %d_2_load, i32 %d_10_load" [winograd.cpp:80]   --->   Operation 197 'fsub' 'sub160_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 198 [4/5] (6.52ns)   --->   "%add170_2 = fadd i32 %d_6_load, i32 %d_10_load" [winograd.cpp:81]   --->   Operation 198 'fadd' 'add170_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 6.52>
+ST_27 : Operation 199 [4/4] (4.62ns)   --->   "%mul_1_2 = fmul i32 %add59_1_2, i32 0.5" [winograd.cpp:60]   --->   Operation 199 'fmul' 'mul_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 200 [4/5] (6.52ns)   --->   "%add1 = fadd i32 %add, i32 %g_6_load" [winograd.cpp:71]   --->   Operation 200 'fadd' 'add1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 201 [4/5] (6.52ns)   --->   "%sub = fsub i32 %g_load, i32 %g_3_load" [winograd.cpp:72]   --->   Operation 201 'fsub' 'sub' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 202 [4/5] (6.52ns)   --->   "%add116_1 = fadd i32 %mul_1, i32 %mul_1_1" [winograd.cpp:71]   --->   Operation 202 'fadd' 'add116_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 203 [4/5] (6.52ns)   --->   "%sub131_1 = fsub i32 %mul_1, i32 %mul_1_1" [winograd.cpp:72]   --->   Operation 203 'fsub' 'sub131_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 204 [3/5] (6.52ns)   --->   "%sub1 = fsub i32 %d_load, i32 %d_8_load" [winograd.cpp:80]   --->   Operation 204 'fsub' 'sub1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 205 [3/5] (6.52ns)   --->   "%add3 = fadd i32 %d_4_load, i32 %d_8_load" [winograd.cpp:81]   --->   Operation 205 'fadd' 'add3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 206 [3/5] (6.52ns)   --->   "%sub160_1 = fsub i32 %d_1_load, i32 %d_9_load" [winograd.cpp:80]   --->   Operation 206 'fsub' 'sub160_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 207 [3/5] (6.52ns)   --->   "%add170_1 = fadd i32 %d_5_load, i32 %d_9_load" [winograd.cpp:81]   --->   Operation 207 'fadd' 'add170_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 208 [3/5] (6.52ns)   --->   "%sub160_2 = fsub i32 %d_2_load, i32 %d_10_load" [winograd.cpp:80]   --->   Operation 208 'fsub' 'sub160_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 209 [3/5] (6.52ns)   --->   "%add170_2 = fadd i32 %d_6_load, i32 %d_10_load" [winograd.cpp:81]   --->   Operation 209 'fadd' 'add170_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 6.52>
+ST_28 : Operation 210 [3/4] (4.62ns)   --->   "%mul_1_2 = fmul i32 %add59_1_2, i32 0.5" [winograd.cpp:60]   --->   Operation 210 'fmul' 'mul_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 211 [3/5] (6.52ns)   --->   "%add1 = fadd i32 %add, i32 %g_6_load" [winograd.cpp:71]   --->   Operation 211 'fadd' 'add1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 212 [3/5] (6.52ns)   --->   "%sub = fsub i32 %g_load, i32 %g_3_load" [winograd.cpp:72]   --->   Operation 212 'fsub' 'sub' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 213 [3/5] (6.52ns)   --->   "%add116_1 = fadd i32 %mul_1, i32 %mul_1_1" [winograd.cpp:71]   --->   Operation 213 'fadd' 'add116_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 214 [3/5] (6.52ns)   --->   "%sub131_1 = fsub i32 %mul_1, i32 %mul_1_1" [winograd.cpp:72]   --->   Operation 214 'fsub' 'sub131_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 215 [2/5] (6.52ns)   --->   "%sub1 = fsub i32 %d_load, i32 %d_8_load" [winograd.cpp:80]   --->   Operation 215 'fsub' 'sub1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 216 [2/5] (6.52ns)   --->   "%add3 = fadd i32 %d_4_load, i32 %d_8_load" [winograd.cpp:81]   --->   Operation 216 'fadd' 'add3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 217 [2/5] (6.52ns)   --->   "%sub160_1 = fsub i32 %d_1_load, i32 %d_9_load" [winograd.cpp:80]   --->   Operation 217 'fsub' 'sub160_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 218 [2/5] (6.52ns)   --->   "%add170_1 = fadd i32 %d_5_load, i32 %d_9_load" [winograd.cpp:81]   --->   Operation 218 'fadd' 'add170_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 219 [2/5] (6.52ns)   --->   "%sub160_2 = fsub i32 %d_2_load, i32 %d_10_load" [winograd.cpp:80]   --->   Operation 219 'fsub' 'sub160_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 220 [2/5] (6.52ns)   --->   "%add170_2 = fadd i32 %d_6_load, i32 %d_10_load" [winograd.cpp:81]   --->   Operation 220 'fadd' 'add170_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 6.52>
+ST_29 : Operation 221 [2/4] (4.62ns)   --->   "%mul_1_2 = fmul i32 %add59_1_2, i32 0.5" [winograd.cpp:60]   --->   Operation 221 'fmul' 'mul_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 222 [2/5] (6.52ns)   --->   "%add1 = fadd i32 %add, i32 %g_6_load" [winograd.cpp:71]   --->   Operation 222 'fadd' 'add1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 223 [2/5] (6.52ns)   --->   "%sub = fsub i32 %g_load, i32 %g_3_load" [winograd.cpp:72]   --->   Operation 223 'fsub' 'sub' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 224 [2/5] (6.52ns)   --->   "%add116_1 = fadd i32 %mul_1, i32 %mul_1_1" [winograd.cpp:71]   --->   Operation 224 'fadd' 'add116_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 225 [2/5] (6.52ns)   --->   "%sub131_1 = fsub i32 %mul_1, i32 %mul_1_1" [winograd.cpp:72]   --->   Operation 225 'fsub' 'sub131_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 226 [1/5] (6.52ns)   --->   "%sub1 = fsub i32 %d_load, i32 %d_8_load" [winograd.cpp:80]   --->   Operation 226 'fsub' 'sub1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 227 [1/5] (6.52ns)   --->   "%add3 = fadd i32 %d_4_load, i32 %d_8_load" [winograd.cpp:81]   --->   Operation 227 'fadd' 'add3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 228 [1/5] (6.52ns)   --->   "%sub160_1 = fsub i32 %d_1_load, i32 %d_9_load" [winograd.cpp:80]   --->   Operation 228 'fsub' 'sub160_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 229 [1/5] (6.52ns)   --->   "%add170_1 = fadd i32 %d_5_load, i32 %d_9_load" [winograd.cpp:81]   --->   Operation 229 'fadd' 'add170_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 230 [1/5] (6.52ns)   --->   "%sub160_2 = fsub i32 %d_2_load, i32 %d_10_load" [winograd.cpp:80]   --->   Operation 230 'fsub' 'sub160_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 231 [1/5] (6.52ns)   --->   "%add170_2 = fadd i32 %d_6_load, i32 %d_10_load" [winograd.cpp:81]   --->   Operation 231 'fadd' 'add170_2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 6.52>
+ST_30 : Operation 232 [1/4] (4.62ns)   --->   "%mul_1_2 = fmul i32 %add59_1_2, i32 0.5" [winograd.cpp:60]   --->   Operation 232 'fmul' 'mul_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 233 [1/5] (6.52ns)   --->   "%add1 = fadd i32 %add, i32 %g_6_load" [winograd.cpp:71]   --->   Operation 233 'fadd' 'add1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 234 [1/5] (6.52ns)   --->   "%sub = fsub i32 %g_load, i32 %g_3_load" [winograd.cpp:72]   --->   Operation 234 'fsub' 'sub' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 235 [1/5] (6.52ns)   --->   "%add116_1 = fadd i32 %mul_1, i32 %mul_1_1" [winograd.cpp:71]   --->   Operation 235 'fadd' 'add116_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 236 [1/5] (6.52ns)   --->   "%sub131_1 = fsub i32 %mul_1, i32 %mul_1_1" [winograd.cpp:72]   --->   Operation 236 'fsub' 'sub131_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 237 [5/5] (6.52ns)   --->   "%sub2 = fsub i32 %sub1, i32 %sub160_2" [winograd.cpp:90]   --->   Operation 237 'fsub' 'sub2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 238 [5/5] (6.52ns)   --->   "%add4 = fadd i32 %sub160_1, i32 %sub160_2" [winograd.cpp:91]   --->   Operation 238 'fadd' 'add4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 239 [5/5] (6.52ns)   --->   "%add5 = fsub i32 %sub160_1, i32 %sub1" [winograd.cpp:92]   --->   Operation 239 'fsub' 'add5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 240 [5/5] (6.52ns)   --->   "%sub209_1 = fsub i32 %add3, i32 %add170_2" [winograd.cpp:90]   --->   Operation 240 'fsub' 'sub209_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 241 [5/5] (6.52ns)   --->   "%add230_1 = fsub i32 %add170_1, i32 %add3" [winograd.cpp:92]   --->   Operation 241 'fsub' 'add230_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 6.52>
+ST_31 : Operation 242 [4/4] (4.62ns)   --->   "%mul = fmul i32 %add1, i32 0.5" [winograd.cpp:71]   --->   Operation 242 'fmul' 'mul' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 243 [5/5] (6.52ns)   --->   "%add2 = fadd i32 %sub, i32 %g_6_load" [winograd.cpp:72]   --->   Operation 243 'fadd' 'add2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 244 [5/5] (6.52ns)   --->   "%add120_1 = fadd i32 %add116_1, i32 %mul_1_2" [winograd.cpp:71]   --->   Operation 244 'fadd' 'add120_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 245 [5/5] (6.52ns)   --->   "%add135_1 = fadd i32 %sub131_1, i32 %mul_1_2" [winograd.cpp:72]   --->   Operation 245 'fadd' 'add135_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 246 [4/5] (6.52ns)   --->   "%sub2 = fsub i32 %sub1, i32 %sub160_2" [winograd.cpp:90]   --->   Operation 246 'fsub' 'sub2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 247 [4/5] (6.52ns)   --->   "%add4 = fadd i32 %sub160_1, i32 %sub160_2" [winograd.cpp:91]   --->   Operation 247 'fadd' 'add4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 248 [4/5] (6.52ns)   --->   "%add5 = fsub i32 %sub160_1, i32 %sub1" [winograd.cpp:92]   --->   Operation 248 'fsub' 'add5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 249 [4/5] (6.52ns)   --->   "%sub209_1 = fsub i32 %add3, i32 %add170_2" [winograd.cpp:90]   --->   Operation 249 'fsub' 'sub209_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 250 [4/5] (6.52ns)   --->   "%add230_1 = fsub i32 %add170_1, i32 %add3" [winograd.cpp:92]   --->   Operation 250 'fsub' 'add230_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 6.52>
+ST_32 : Operation 251 [3/4] (4.62ns)   --->   "%mul = fmul i32 %add1, i32 0.5" [winograd.cpp:71]   --->   Operation 251 'fmul' 'mul' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 252 [4/5] (6.52ns)   --->   "%add2 = fadd i32 %sub, i32 %g_6_load" [winograd.cpp:72]   --->   Operation 252 'fadd' 'add2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 253 [4/5] (6.52ns)   --->   "%add120_1 = fadd i32 %add116_1, i32 %mul_1_2" [winograd.cpp:71]   --->   Operation 253 'fadd' 'add120_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 254 [4/5] (6.52ns)   --->   "%add135_1 = fadd i32 %sub131_1, i32 %mul_1_2" [winograd.cpp:72]   --->   Operation 254 'fadd' 'add135_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 255 [3/5] (6.52ns)   --->   "%sub2 = fsub i32 %sub1, i32 %sub160_2" [winograd.cpp:90]   --->   Operation 255 'fsub' 'sub2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 256 [3/5] (6.52ns)   --->   "%add4 = fadd i32 %sub160_1, i32 %sub160_2" [winograd.cpp:91]   --->   Operation 256 'fadd' 'add4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 257 [3/5] (6.52ns)   --->   "%add5 = fsub i32 %sub160_1, i32 %sub1" [winograd.cpp:92]   --->   Operation 257 'fsub' 'add5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 258 [3/5] (6.52ns)   --->   "%sub209_1 = fsub i32 %add3, i32 %add170_2" [winograd.cpp:90]   --->   Operation 258 'fsub' 'sub209_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 259 [3/5] (6.52ns)   --->   "%add230_1 = fsub i32 %add170_1, i32 %add3" [winograd.cpp:92]   --->   Operation 259 'fsub' 'add230_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 6.52>
+ST_33 : Operation 260 [2/4] (4.62ns)   --->   "%mul = fmul i32 %add1, i32 0.5" [winograd.cpp:71]   --->   Operation 260 'fmul' 'mul' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 261 [3/5] (6.52ns)   --->   "%add2 = fadd i32 %sub, i32 %g_6_load" [winograd.cpp:72]   --->   Operation 261 'fadd' 'add2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 262 [3/5] (6.52ns)   --->   "%add120_1 = fadd i32 %add116_1, i32 %mul_1_2" [winograd.cpp:71]   --->   Operation 262 'fadd' 'add120_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 263 [3/5] (6.52ns)   --->   "%add135_1 = fadd i32 %sub131_1, i32 %mul_1_2" [winograd.cpp:72]   --->   Operation 263 'fadd' 'add135_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 264 [2/5] (6.52ns)   --->   "%sub2 = fsub i32 %sub1, i32 %sub160_2" [winograd.cpp:90]   --->   Operation 264 'fsub' 'sub2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 265 [2/5] (6.52ns)   --->   "%add4 = fadd i32 %sub160_1, i32 %sub160_2" [winograd.cpp:91]   --->   Operation 265 'fadd' 'add4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 266 [2/5] (6.52ns)   --->   "%add5 = fsub i32 %sub160_1, i32 %sub1" [winograd.cpp:92]   --->   Operation 266 'fsub' 'add5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 267 [2/5] (6.52ns)   --->   "%sub209_1 = fsub i32 %add3, i32 %add170_2" [winograd.cpp:90]   --->   Operation 267 'fsub' 'sub209_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 268 [2/5] (6.52ns)   --->   "%add230_1 = fsub i32 %add170_1, i32 %add3" [winograd.cpp:92]   --->   Operation 268 'fsub' 'add230_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 6.52>
+ST_34 : Operation 269 [1/4] (4.62ns)   --->   "%mul = fmul i32 %add1, i32 0.5" [winograd.cpp:71]   --->   Operation 269 'fmul' 'mul' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 270 [2/5] (6.52ns)   --->   "%add2 = fadd i32 %sub, i32 %g_6_load" [winograd.cpp:72]   --->   Operation 270 'fadd' 'add2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 271 [2/5] (6.52ns)   --->   "%add120_1 = fadd i32 %add116_1, i32 %mul_1_2" [winograd.cpp:71]   --->   Operation 271 'fadd' 'add120_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 272 [2/5] (6.52ns)   --->   "%add135_1 = fadd i32 %sub131_1, i32 %mul_1_2" [winograd.cpp:72]   --->   Operation 272 'fadd' 'add135_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 273 [1/5] (6.52ns)   --->   "%sub2 = fsub i32 %sub1, i32 %sub160_2" [winograd.cpp:90]   --->   Operation 273 'fsub' 'sub2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 274 [1/5] (6.52ns)   --->   "%add4 = fadd i32 %sub160_1, i32 %sub160_2" [winograd.cpp:91]   --->   Operation 274 'fadd' 'add4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 275 [1/5] (6.52ns)   --->   "%add5 = fsub i32 %sub160_1, i32 %sub1" [winograd.cpp:92]   --->   Operation 275 'fsub' 'add5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 276 [1/5] (6.52ns)   --->   "%sub209_1 = fsub i32 %add3, i32 %add170_2" [winograd.cpp:90]   --->   Operation 276 'fsub' 'sub209_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 277 [1/5] (6.52ns)   --->   "%add230_1 = fsub i32 %add170_1, i32 %add3" [winograd.cpp:92]   --->   Operation 277 'fsub' 'add230_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 6.52>
+ST_35 : Operation 278 [1/5] (6.52ns)   --->   "%add2 = fadd i32 %sub, i32 %g_6_load" [winograd.cpp:72]   --->   Operation 278 'fadd' 'add2' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 279 [1/5] (6.52ns)   --->   "%add120_1 = fadd i32 %add116_1, i32 %mul_1_2" [winograd.cpp:71]   --->   Operation 279 'fadd' 'add120_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 280 [1/5] (6.52ns)   --->   "%add135_1 = fadd i32 %sub131_1, i32 %mul_1_2" [winograd.cpp:72]   --->   Operation 280 'fadd' 'add135_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 281 [5/5] (6.52ns)   --->   "%add6 = fadd i32 %add5, i32 %sub160_2" [winograd.cpp:92]   --->   Operation 281 'fadd' 'add6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 282 [5/5] (6.52ns)   --->   "%add219_1 = fadd i32 %add170_1, i32 %add170_2" [winograd.cpp:91]   --->   Operation 282 'fadd' 'add219_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 283 [5/5] (6.52ns)   --->   "%add234_1 = fadd i32 %add230_1, i32 %add170_2" [winograd.cpp:92]   --->   Operation 283 'fadd' 'add234_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 284 [4/4] (4.62ns)   --->   "%mul2 = fmul i32 %g_load, i32 %sub2" [winograd.cpp:102]   --->   Operation 284 'fmul' 'mul2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 285 [4/4] (4.62ns)   --->   "%mul266_s = fmul i32 %mul, i32 %add4" [winograd.cpp:102]   --->   Operation 285 'fmul' 'mul266_s' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 286 [4/4] (4.62ns)   --->   "%mul266_1 = fmul i32 %mul_1, i32 %sub209_1" [winograd.cpp:102]   --->   Operation 286 'fmul' 'mul266_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 6.52>
+ST_36 : Operation 287 [4/4] (4.62ns)   --->   "%mul1 = fmul i32 %add2, i32 0.5" [winograd.cpp:72]   --->   Operation 287 'fmul' 'mul1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 288 [4/4] (4.62ns)   --->   "%mul121_1 = fmul i32 %add120_1, i32 0.5" [winograd.cpp:71]   --->   Operation 288 'fmul' 'mul121_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 289 [4/4] (4.62ns)   --->   "%mul136_1 = fmul i32 %add135_1, i32 0.5" [winograd.cpp:72]   --->   Operation 289 'fmul' 'mul136_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 290 [4/5] (6.52ns)   --->   "%add6 = fadd i32 %add5, i32 %sub160_2" [winograd.cpp:92]   --->   Operation 290 'fadd' 'add6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 291 [4/5] (6.52ns)   --->   "%add219_1 = fadd i32 %add170_1, i32 %add170_2" [winograd.cpp:91]   --->   Operation 291 'fadd' 'add219_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 292 [4/5] (6.52ns)   --->   "%add234_1 = fadd i32 %add230_1, i32 %add170_2" [winograd.cpp:92]   --->   Operation 292 'fadd' 'add234_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 293 [3/4] (4.62ns)   --->   "%mul2 = fmul i32 %g_load, i32 %sub2" [winograd.cpp:102]   --->   Operation 293 'fmul' 'mul2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 294 [3/4] (4.62ns)   --->   "%mul266_s = fmul i32 %mul, i32 %add4" [winograd.cpp:102]   --->   Operation 294 'fmul' 'mul266_s' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 295 [3/4] (4.62ns)   --->   "%mul266_1 = fmul i32 %mul_1, i32 %sub209_1" [winograd.cpp:102]   --->   Operation 295 'fmul' 'mul266_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 6.52>
+ST_37 : Operation 296 [3/4] (4.62ns)   --->   "%mul1 = fmul i32 %add2, i32 0.5" [winograd.cpp:72]   --->   Operation 296 'fmul' 'mul1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 297 [3/4] (4.62ns)   --->   "%mul121_1 = fmul i32 %add120_1, i32 0.5" [winograd.cpp:71]   --->   Operation 297 'fmul' 'mul121_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 298 [3/4] (4.62ns)   --->   "%mul136_1 = fmul i32 %add135_1, i32 0.5" [winograd.cpp:72]   --->   Operation 298 'fmul' 'mul136_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 299 [3/5] (6.52ns)   --->   "%add6 = fadd i32 %add5, i32 %sub160_2" [winograd.cpp:92]   --->   Operation 299 'fadd' 'add6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 300 [3/5] (6.52ns)   --->   "%add219_1 = fadd i32 %add170_1, i32 %add170_2" [winograd.cpp:91]   --->   Operation 300 'fadd' 'add219_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 301 [3/5] (6.52ns)   --->   "%add234_1 = fadd i32 %add230_1, i32 %add170_2" [winograd.cpp:92]   --->   Operation 301 'fadd' 'add234_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 302 [2/4] (4.62ns)   --->   "%mul2 = fmul i32 %g_load, i32 %sub2" [winograd.cpp:102]   --->   Operation 302 'fmul' 'mul2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 303 [2/4] (4.62ns)   --->   "%mul266_s = fmul i32 %mul, i32 %add4" [winograd.cpp:102]   --->   Operation 303 'fmul' 'mul266_s' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 304 [2/4] (4.62ns)   --->   "%mul266_1 = fmul i32 %mul_1, i32 %sub209_1" [winograd.cpp:102]   --->   Operation 304 'fmul' 'mul266_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 6.52>
+ST_38 : Operation 305 [2/4] (4.62ns)   --->   "%mul1 = fmul i32 %add2, i32 0.5" [winograd.cpp:72]   --->   Operation 305 'fmul' 'mul1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 306 [2/4] (4.62ns)   --->   "%mul121_1 = fmul i32 %add120_1, i32 0.5" [winograd.cpp:71]   --->   Operation 306 'fmul' 'mul121_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 307 [2/4] (4.62ns)   --->   "%mul136_1 = fmul i32 %add135_1, i32 0.5" [winograd.cpp:72]   --->   Operation 307 'fmul' 'mul136_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 308 [2/5] (6.52ns)   --->   "%add6 = fadd i32 %add5, i32 %sub160_2" [winograd.cpp:92]   --->   Operation 308 'fadd' 'add6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 309 [2/5] (6.52ns)   --->   "%add219_1 = fadd i32 %add170_1, i32 %add170_2" [winograd.cpp:91]   --->   Operation 309 'fadd' 'add219_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 310 [2/5] (6.52ns)   --->   "%add234_1 = fadd i32 %add230_1, i32 %add170_2" [winograd.cpp:92]   --->   Operation 310 'fadd' 'add234_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 311 [1/4] (4.62ns)   --->   "%mul2 = fmul i32 %g_load, i32 %sub2" [winograd.cpp:102]   --->   Operation 311 'fmul' 'mul2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 312 [1/4] (4.62ns)   --->   "%mul266_s = fmul i32 %mul, i32 %add4" [winograd.cpp:102]   --->   Operation 312 'fmul' 'mul266_s' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 313 [1/4] (4.62ns)   --->   "%mul266_1 = fmul i32 %mul_1, i32 %sub209_1" [winograd.cpp:102]   --->   Operation 313 'fmul' 'mul266_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 6.52>
+ST_39 : Operation 314 [1/4] (4.62ns)   --->   "%mul1 = fmul i32 %add2, i32 0.5" [winograd.cpp:72]   --->   Operation 314 'fmul' 'mul1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 315 [1/4] (4.62ns)   --->   "%mul121_1 = fmul i32 %add120_1, i32 0.5" [winograd.cpp:71]   --->   Operation 315 'fmul' 'mul121_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 316 [1/4] (4.62ns)   --->   "%mul136_1 = fmul i32 %add135_1, i32 0.5" [winograd.cpp:72]   --->   Operation 316 'fmul' 'mul136_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 317 [1/5] (6.52ns)   --->   "%add6 = fadd i32 %add5, i32 %sub160_2" [winograd.cpp:92]   --->   Operation 317 'fadd' 'add6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 318 [1/5] (6.52ns)   --->   "%add219_1 = fadd i32 %add170_1, i32 %add170_2" [winograd.cpp:91]   --->   Operation 318 'fadd' 'add219_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 319 [1/5] (6.52ns)   --->   "%add234_1 = fadd i32 %add230_1, i32 %add170_2" [winograd.cpp:92]   --->   Operation 319 'fadd' 'add234_1' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 320 [5/5] (6.52ns)   --->   "%add7 = fadd i32 %mul2, i32 %mul266_s" [winograd.cpp:102]   --->   Operation 320 'fadd' 'add7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 6.52>
+ST_40 : Operation 321 [1/1] (0.00ns)   --->   "%d_3_load = load i32 %d_3_load_loc"   --->   Operation 321 'load' 'd_3_load' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 322 [1/1] (0.00ns)   --->   "%d_7_load = load i32 %d_7_load_loc"   --->   Operation 322 'load' 'd_7_load' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 323 [1/1] (0.00ns)   --->   "%d_11_load = load i32 %d_11_load_loc"   --->   Operation 323 'load' 'd_11_load' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 324 [5/5] (6.52ns)   --->   "%sub160_3 = fsub i32 %d_3_load, i32 %d_11_load" [winograd.cpp:80]   --->   Operation 324 'fsub' 'sub160_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 325 [5/5] (6.52ns)   --->   "%add170_3 = fadd i32 %d_7_load, i32 %d_11_load" [winograd.cpp:81]   --->   Operation 325 'fadd' 'add170_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 326 [4/4] (4.62ns)   --->   "%mul266_2 = fmul i32 %mul1, i32 %add6" [winograd.cpp:102]   --->   Operation 326 'fmul' 'mul266_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 327 [4/4] (4.62ns)   --->   "%mul266_1_1 = fmul i32 %mul121_1, i32 %add219_1" [winograd.cpp:102]   --->   Operation 327 'fmul' 'mul266_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 328 [4/4] (4.62ns)   --->   "%mul266_1_2 = fmul i32 %mul136_1, i32 %add234_1" [winograd.cpp:102]   --->   Operation 328 'fmul' 'mul266_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 329 [4/5] (6.52ns)   --->   "%add7 = fadd i32 %mul2, i32 %mul266_s" [winograd.cpp:102]   --->   Operation 329 'fadd' 'add7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 6.52>
+ST_41 : Operation 330 [4/5] (6.52ns)   --->   "%sub160_3 = fsub i32 %d_3_load, i32 %d_11_load" [winograd.cpp:80]   --->   Operation 330 'fsub' 'sub160_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 331 [4/5] (6.52ns)   --->   "%add170_3 = fadd i32 %d_7_load, i32 %d_11_load" [winograd.cpp:81]   --->   Operation 331 'fadd' 'add170_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 332 [3/4] (4.62ns)   --->   "%mul266_2 = fmul i32 %mul1, i32 %add6" [winograd.cpp:102]   --->   Operation 332 'fmul' 'mul266_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 333 [3/4] (4.62ns)   --->   "%mul266_1_1 = fmul i32 %mul121_1, i32 %add219_1" [winograd.cpp:102]   --->   Operation 333 'fmul' 'mul266_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 334 [3/4] (4.62ns)   --->   "%mul266_1_2 = fmul i32 %mul136_1, i32 %add234_1" [winograd.cpp:102]   --->   Operation 334 'fmul' 'mul266_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 335 [3/5] (6.52ns)   --->   "%add7 = fadd i32 %mul2, i32 %mul266_s" [winograd.cpp:102]   --->   Operation 335 'fadd' 'add7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 6.52>
+ST_42 : Operation 336 [3/5] (6.52ns)   --->   "%sub160_3 = fsub i32 %d_3_load, i32 %d_11_load" [winograd.cpp:80]   --->   Operation 336 'fsub' 'sub160_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 337 [3/5] (6.52ns)   --->   "%add170_3 = fadd i32 %d_7_load, i32 %d_11_load" [winograd.cpp:81]   --->   Operation 337 'fadd' 'add170_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 338 [2/4] (4.62ns)   --->   "%mul266_2 = fmul i32 %mul1, i32 %add6" [winograd.cpp:102]   --->   Operation 338 'fmul' 'mul266_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 339 [2/4] (4.62ns)   --->   "%mul266_1_1 = fmul i32 %mul121_1, i32 %add219_1" [winograd.cpp:102]   --->   Operation 339 'fmul' 'mul266_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 340 [2/4] (4.62ns)   --->   "%mul266_1_2 = fmul i32 %mul136_1, i32 %add234_1" [winograd.cpp:102]   --->   Operation 340 'fmul' 'mul266_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 341 [2/5] (6.52ns)   --->   "%add7 = fadd i32 %mul2, i32 %mul266_s" [winograd.cpp:102]   --->   Operation 341 'fadd' 'add7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 6.52>
+ST_43 : Operation 342 [2/5] (6.52ns)   --->   "%sub160_3 = fsub i32 %d_3_load, i32 %d_11_load" [winograd.cpp:80]   --->   Operation 342 'fsub' 'sub160_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 343 [2/5] (6.52ns)   --->   "%add170_3 = fadd i32 %d_7_load, i32 %d_11_load" [winograd.cpp:81]   --->   Operation 343 'fadd' 'add170_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 344 [1/4] (4.62ns)   --->   "%mul266_2 = fmul i32 %mul1, i32 %add6" [winograd.cpp:102]   --->   Operation 344 'fmul' 'mul266_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 345 [1/4] (4.62ns)   --->   "%mul266_1_1 = fmul i32 %mul121_1, i32 %add219_1" [winograd.cpp:102]   --->   Operation 345 'fmul' 'mul266_1_1' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 346 [1/4] (4.62ns)   --->   "%mul266_1_2 = fmul i32 %mul136_1, i32 %add234_1" [winograd.cpp:102]   --->   Operation 346 'fmul' 'mul266_1_2' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 347 [1/5] (6.52ns)   --->   "%add7 = fadd i32 %mul2, i32 %mul266_s" [winograd.cpp:102]   --->   Operation 347 'fadd' 'add7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 6.52>
+ST_44 : Operation 348 [1/5] (6.52ns)   --->   "%sub160_3 = fsub i32 %d_3_load, i32 %d_11_load" [winograd.cpp:80]   --->   Operation 348 'fsub' 'sub160_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 349 [1/5] (6.52ns)   --->   "%add170_3 = fadd i32 %d_7_load, i32 %d_11_load" [winograd.cpp:81]   --->   Operation 349 'fadd' 'add170_3' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 350 [5/5] (6.52ns)   --->   "%add8 = fadd i32 %add7, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 350 'fadd' 'add8' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 351 [5/5] (6.52ns)   --->   "%sub4 = fsub i32 %mul266_s, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 351 'fsub' 'sub4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 352 [5/5] (6.52ns)   --->   "%sub6 = fsub i32 %mul266_1_1, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 352 'fsub' 'sub6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 353 [5/5] (6.52ns)   --->   "%add9 = fadd i32 %mul266_1, i32 %mul266_1_1" [winograd.cpp:102]   --->   Operation 353 'fadd' 'add9' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 6.52>
+ST_45 : Operation 354 [1/1] (0.00ns)   --->   "%bitcast_ln93 = bitcast i32 %sub160_3" [winograd.cpp:93]   --->   Operation 354 'bitcast' 'bitcast_ln93' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 355 [1/1] (0.00ns)   --->   "%bit_sel1 = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %bitcast_ln93, i32 31" [winograd.cpp:93]   --->   Operation 355 'bitselect' 'bit_sel1' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 356 [1/1] (0.30ns)   --->   "%xor_ln93_2 = xor i1 %bit_sel1, i1 1" [winograd.cpp:93]   --->   Operation 356 'xor' 'xor_ln93_2' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 357 [1/1] (0.00ns)   --->   "%trunc_ln93 = trunc i32 %bitcast_ln93" [winograd.cpp:93]   --->   Operation 357 'trunc' 'trunc_ln93' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 358 [1/1] (0.00ns)   --->   "%xor_ln = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i1.i31, i1 %xor_ln93_2, i31 %trunc_ln93" [winograd.cpp:93]   --->   Operation 358 'bitconcatenate' 'xor_ln' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 359 [1/1] (0.00ns)   --->   "%bitcast_ln93_1 = bitcast i32 %xor_ln" [winograd.cpp:93]   --->   Operation 359 'bitcast' 'bitcast_ln93_1' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 360 [1/1] (0.00ns)   --->   "%bitcast_ln93_2 = bitcast i32 %add170_3" [winograd.cpp:93]   --->   Operation 360 'bitcast' 'bitcast_ln93_2' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 361 [1/1] (0.00ns)   --->   "%bit_sel = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %bitcast_ln93_2, i32 31" [winograd.cpp:93]   --->   Operation 361 'bitselect' 'bit_sel' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 362 [1/1] (0.30ns)   --->   "%xor_ln93 = xor i1 %bit_sel, i1 1" [winograd.cpp:93]   --->   Operation 362 'xor' 'xor_ln93' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 363 [1/1] (0.00ns)   --->   "%trunc_ln93_1 = trunc i32 %bitcast_ln93_2" [winograd.cpp:93]   --->   Operation 363 'trunc' 'trunc_ln93_1' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 364 [1/1] (0.00ns)   --->   "%xor_ln93_1 = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i1.i31, i1 %xor_ln93, i31 %trunc_ln93_1" [winograd.cpp:93]   --->   Operation 364 'bitconcatenate' 'xor_ln93_1' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 365 [1/1] (0.00ns)   --->   "%bitcast_ln93_3 = bitcast i32 %xor_ln93_1" [winograd.cpp:93]   --->   Operation 365 'bitcast' 'bitcast_ln93_3' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 366 [4/4] (4.62ns)   --->   "%mul266_3 = fmul i32 %g_6_load, i32 %bitcast_ln93_1" [winograd.cpp:102]   --->   Operation 366 'fmul' 'mul266_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 367 [4/4] (4.62ns)   --->   "%mul266_1_3 = fmul i32 %mul_1_2, i32 %bitcast_ln93_3" [winograd.cpp:102]   --->   Operation 367 'fmul' 'mul266_1_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 368 [4/5] (6.52ns)   --->   "%add8 = fadd i32 %add7, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 368 'fadd' 'add8' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 369 [4/5] (6.52ns)   --->   "%sub4 = fsub i32 %mul266_s, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 369 'fsub' 'sub4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 370 [4/5] (6.52ns)   --->   "%sub6 = fsub i32 %mul266_1_1, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 370 'fsub' 'sub6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 371 [4/5] (6.52ns)   --->   "%add9 = fadd i32 %mul266_1, i32 %mul266_1_1" [winograd.cpp:102]   --->   Operation 371 'fadd' 'add9' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 45> <Delay = 6.52>
+ST_46 : Operation 372 [3/4] (4.62ns)   --->   "%mul266_3 = fmul i32 %g_6_load, i32 %bitcast_ln93_1" [winograd.cpp:102]   --->   Operation 372 'fmul' 'mul266_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 373 [3/4] (4.62ns)   --->   "%mul266_1_3 = fmul i32 %mul_1_2, i32 %bitcast_ln93_3" [winograd.cpp:102]   --->   Operation 373 'fmul' 'mul266_1_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 374 [3/5] (6.52ns)   --->   "%add8 = fadd i32 %add7, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 374 'fadd' 'add8' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 375 [3/5] (6.52ns)   --->   "%sub4 = fsub i32 %mul266_s, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 375 'fsub' 'sub4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 376 [3/5] (6.52ns)   --->   "%sub6 = fsub i32 %mul266_1_1, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 376 'fsub' 'sub6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 377 [3/5] (6.52ns)   --->   "%add9 = fadd i32 %mul266_1, i32 %mul266_1_1" [winograd.cpp:102]   --->   Operation 377 'fadd' 'add9' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 6.52>
+ST_47 : Operation 378 [2/4] (4.62ns)   --->   "%mul266_3 = fmul i32 %g_6_load, i32 %bitcast_ln93_1" [winograd.cpp:102]   --->   Operation 378 'fmul' 'mul266_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 379 [2/4] (4.62ns)   --->   "%mul266_1_3 = fmul i32 %mul_1_2, i32 %bitcast_ln93_3" [winograd.cpp:102]   --->   Operation 379 'fmul' 'mul266_1_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 380 [2/5] (6.52ns)   --->   "%add8 = fadd i32 %add7, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 380 'fadd' 'add8' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 381 [2/5] (6.52ns)   --->   "%sub4 = fsub i32 %mul266_s, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 381 'fsub' 'sub4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 382 [2/5] (6.52ns)   --->   "%sub6 = fsub i32 %mul266_1_1, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 382 'fsub' 'sub6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 383 [2/5] (6.52ns)   --->   "%add9 = fadd i32 %mul266_1, i32 %mul266_1_1" [winograd.cpp:102]   --->   Operation 383 'fadd' 'add9' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 6.52>
+ST_48 : Operation 384 [1/4] (4.62ns)   --->   "%mul266_3 = fmul i32 %g_6_load, i32 %bitcast_ln93_1" [winograd.cpp:102]   --->   Operation 384 'fmul' 'mul266_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 385 [1/4] (4.62ns)   --->   "%mul266_1_3 = fmul i32 %mul_1_2, i32 %bitcast_ln93_3" [winograd.cpp:102]   --->   Operation 385 'fmul' 'mul266_1_3' <Predicate = true> <Delay = 4.62> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.62> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 386 [1/5] (6.52ns)   --->   "%add8 = fadd i32 %add7, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 386 'fadd' 'add8' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 387 [1/5] (6.52ns)   --->   "%sub4 = fsub i32 %mul266_s, i32 %mul266_2" [winograd.cpp:102]   --->   Operation 387 'fsub' 'sub4' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 388 [1/5] (6.52ns)   --->   "%sub6 = fsub i32 %mul266_1_1, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 388 'fsub' 'sub6' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 389 [1/5] (6.52ns)   --->   "%add9 = fadd i32 %mul266_1, i32 %mul266_1_1" [winograd.cpp:102]   --->   Operation 389 'fadd' 'add9' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 6.52>
+ST_49 : Operation 390 [5/5] (6.52ns)   --->   "%sub5 = fsub i32 %sub4, i32 %mul266_3" [winograd.cpp:102]   --->   Operation 390 'fsub' 'sub5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 391 [5/5] (6.52ns)   --->   "%sub7 = fsub i32 %sub6, i32 %mul266_1_3" [winograd.cpp:102]   --->   Operation 391 'fsub' 'sub7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 392 [5/5] (6.52ns)   --->   "%add10 = fadd i32 %add9, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 392 'fadd' 'add10' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 49> <Delay = 6.52>
+ST_50 : Operation 393 [4/5] (6.52ns)   --->   "%sub5 = fsub i32 %sub4, i32 %mul266_3" [winograd.cpp:102]   --->   Operation 393 'fsub' 'sub5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 394 [4/5] (6.52ns)   --->   "%sub7 = fsub i32 %sub6, i32 %mul266_1_3" [winograd.cpp:102]   --->   Operation 394 'fsub' 'sub7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 395 [4/5] (6.52ns)   --->   "%add10 = fadd i32 %add9, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 395 'fadd' 'add10' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 50> <Delay = 6.52>
+ST_51 : Operation 396 [3/5] (6.52ns)   --->   "%sub5 = fsub i32 %sub4, i32 %mul266_3" [winograd.cpp:102]   --->   Operation 396 'fsub' 'sub5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 397 [3/5] (6.52ns)   --->   "%sub7 = fsub i32 %sub6, i32 %mul266_1_3" [winograd.cpp:102]   --->   Operation 397 'fsub' 'sub7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 398 [3/5] (6.52ns)   --->   "%add10 = fadd i32 %add9, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 398 'fadd' 'add10' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 6.52>
+ST_52 : Operation 399 [2/5] (6.52ns)   --->   "%sub5 = fsub i32 %sub4, i32 %mul266_3" [winograd.cpp:102]   --->   Operation 399 'fsub' 'sub5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 400 [2/5] (6.52ns)   --->   "%sub7 = fsub i32 %sub6, i32 %mul266_1_3" [winograd.cpp:102]   --->   Operation 400 'fsub' 'sub7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 401 [2/5] (6.52ns)   --->   "%add10 = fadd i32 %add9, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 401 'fadd' 'add10' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 7.01>
+ST_53 : Operation 402 [1/5] (6.52ns)   --->   "%sub5 = fsub i32 %sub4, i32 %mul266_3" [winograd.cpp:102]   --->   Operation 402 'fsub' 'sub5' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 403 [1/5] (6.52ns)   --->   "%sub7 = fsub i32 %sub6, i32 %mul266_1_3" [winograd.cpp:102]   --->   Operation 403 'fsub' 'sub7' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 404 [1/5] (6.52ns)   --->   "%add10 = fadd i32 %add9, i32 %mul266_1_2" [winograd.cpp:102]   --->   Operation 404 'fadd' 'add10' <Predicate = true> <Delay = 6.52> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.52> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 405 [2/2] (0.48ns)   --->   "%call_ln102 = call void @winograd_Pipeline_compute_Y, i32 %sub7, i32 %add10, i32 %sub5, i32 %add8, i32 %p_loc, i32 %p_loc9, i32 %p_loc10, i32 %p_loc11" [winograd.cpp:102]   --->   Operation 405 'call' 'call_ln102' <Predicate = true> <Delay = 0.48> <CoreType = "Generic">   --->   Generic Core
+
+State 54 <SV = 53> <Delay = 2.03>
+ST_54 : Operation 406 [1/2] (2.03ns)   --->   "%call_ln102 = call void @winograd_Pipeline_compute_Y, i32 %sub7, i32 %add10, i32 %sub5, i32 %add8, i32 %p_loc, i32 %p_loc9, i32 %p_loc10, i32 %p_loc11" [winograd.cpp:102]   --->   Operation 406 'call' 'call_ln102' <Predicate = true> <Delay = 2.03> <CoreType = "Generic">   --->   Generic Core
+
+State 55 <SV = 54> <Delay = 7.30>
+ST_55 : Operation 407 [1/1] (7.30ns)   --->   "%empty_23 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem_addr_2, i64 4" [winograd.cpp:127]   --->   Operation 407 'writereq' 'empty_23' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 9> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 56 <SV = 55> <Delay = 7.30>
+ST_56 : Operation 408 [1/1] (0.00ns)   --->   "%p_loc11_load = load i32 %p_loc11"   --->   Operation 408 'load' 'p_loc11_load' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 409 [1/1] (0.00ns)   --->   "%bitcast_ln127 = bitcast i32 %p_loc11_load" [winograd.cpp:127]   --->   Operation 409 'bitcast' 'bitcast_ln127' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 410 [1/1] (7.30ns)   --->   "%write_ln127 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_addr_2, i32 %bitcast_ln127, i4 15" [winograd.cpp:127]   --->   Operation 410 'write' 'write_ln127' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 57 <SV = 56> <Delay = 7.30>
+ST_57 : Operation 411 [1/1] (0.00ns)   --->   "%p_loc10_load = load i32 %p_loc10"   --->   Operation 411 'load' 'p_loc10_load' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 412 [1/1] (0.00ns)   --->   "%bitcast_ln127_1 = bitcast i32 %p_loc10_load" [winograd.cpp:127]   --->   Operation 412 'bitcast' 'bitcast_ln127_1' <Predicate = true> <Delay = 0.00>
+ST_57 : Operation 413 [1/1] (7.30ns)   --->   "%write_ln127 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_addr_2, i32 %bitcast_ln127_1, i4 15" [winograd.cpp:127]   --->   Operation 413 'write' 'write_ln127' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 58 <SV = 57> <Delay = 7.30>
+ST_58 : Operation 414 [1/1] (0.00ns)   --->   "%p_loc9_load = load i32 %p_loc9"   --->   Operation 414 'load' 'p_loc9_load' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 415 [1/1] (0.00ns)   --->   "%bitcast_ln127_2 = bitcast i32 %p_loc9_load" [winograd.cpp:127]   --->   Operation 415 'bitcast' 'bitcast_ln127_2' <Predicate = true> <Delay = 0.00>
+ST_58 : Operation 416 [1/1] (7.30ns)   --->   "%write_ln127 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_addr_2, i32 %bitcast_ln127_2, i4 15" [winograd.cpp:127]   --->   Operation 416 'write' 'write_ln127' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 59 <SV = 58> <Delay = 7.30>
+ST_59 : Operation 417 [1/1] (0.00ns)   --->   "%p_loc_load = load i32 %p_loc"   --->   Operation 417 'load' 'p_loc_load' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 418 [1/1] (0.00ns)   --->   "%bitcast_ln127_3 = bitcast i32 %p_loc_load" [winograd.cpp:127]   --->   Operation 418 'bitcast' 'bitcast_ln127_3' <Predicate = true> <Delay = 0.00>
+ST_59 : Operation 419 [1/1] (7.30ns)   --->   "%write_ln127 = write void @_ssdm_op_Write.m_axi.p1i32, i32 %gmem_addr_2, i32 %bitcast_ln127_3, i4 15" [winograd.cpp:127]   --->   Operation 419 'write' 'write_ln127' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 60 <SV = 59> <Delay = 7.30>
+ST_60 : Operation 420 [5/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_2" [winograd.cpp:127]   --->   Operation 420 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 61 <SV = 60> <Delay = 7.30>
+ST_61 : Operation 421 [4/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_2" [winograd.cpp:127]   --->   Operation 421 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 62 <SV = 61> <Delay = 7.30>
+ST_62 : Operation 422 [3/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_2" [winograd.cpp:127]   --->   Operation 422 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 63 <SV = 62> <Delay = 7.30>
+ST_63 : Operation 423 [2/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_2" [winograd.cpp:127]   --->   Operation 423 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 64 <SV = 63> <Delay = 7.30>
+ST_64 : Operation 424 [1/1] (0.00ns)   --->   "%spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8" [winograd.cpp:6]   --->   Operation 424 'spectopmodule' 'spectopmodule_ln6' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 425 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32 0, i32 0, void @empty_12, i32 0, i32 9, void @empty_0, void @empty_1, void @empty_12, i32 16, i32 16, i32 16, i32 16, void @empty_12, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 425 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 426 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem"   --->   Operation 426 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 427 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_g, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_4, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_13, i32 4294967295, i32 0, i32 0"   --->   Operation 427 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 428 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_g, void @empty_5, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_13, i32 4294967295, i32 0, i32 0"   --->   Operation 428 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 429 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_d, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_6, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_13, i32 4294967295, i32 0, i32 0"   --->   Operation 429 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 430 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_d, void @empty_5, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_13, i32 4294967295, i32 0, i32 0"   --->   Operation 430 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 431 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %out_y, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_7, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_13, i32 4294967295, i32 0, i32 0"   --->   Operation 431 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 432 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %out_y, void @empty_5, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_13, i32 4294967295, i32 0, i32 0"   --->   Operation 432 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 433 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0, i32 0"   --->   Operation 433 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_64 : Operation 434 [1/5] (7.30ns)   --->   "%empty_24 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem_addr_2" [winograd.cpp:127]   --->   Operation 434 'writeresp' 'empty_24' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_64 : Operation 435 [1/1] (0.00ns)   --->   "%ret_ln127 = ret" [winograd.cpp:127]   --->   Operation 435 'ret' 'ret_ln127' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.000ns
+The critical path consists of the following:
+	s_axi read operation ('out_y_read') on port 'out_y' [5]  (1.000 ns)
+
+ <State 2>: 7.300ns
+The critical path consists of the following:
+	'getelementptr' operation 32 bit ('gmem_addr', winograd.cpp:34) [45]  (0.000 ns)
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 3>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 4>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 5>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 6>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 7>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 8>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 9>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', winograd.cpp:34) on port 'gmem' (winograd.cpp:34) [46]  (7.300 ns)
+
+ <State 10>: 0.000ns
+The critical path consists of the following:
+
+ <State 11>: 1.734ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln34', winograd.cpp:34) to 'winograd_Pipeline_read_g' [47]  (1.734 ns)
+
+ <State 12>: 7.300ns
+The critical path consists of the following:
+	'getelementptr' operation 32 bit ('gmem_addr_1', winograd.cpp:45) [59]  (0.000 ns)
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 13>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 14>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 15>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 16>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 17>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 18>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 19>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_22', winograd.cpp:45) on port 'gmem' (winograd.cpp:45) [60]  (7.300 ns)
+
+ <State 20>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add59_1', winograd.cpp:60) [75]  (6.526 ns)
+
+ <State 21>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add59_1', winograd.cpp:60) [75]  (6.526 ns)
+
+ <State 22>: 6.526ns
+The critical path consists of the following:
+	'load' operation 32 bit ('g_8_load') on local variable 'g_8_load_loc' [56]  (0.000 ns)
+	'fadd' operation 32 bit ('add59_1_2', winograd.cpp:60) [81]  (6.526 ns)
+
+ <State 23>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add59_1_2', winograd.cpp:60) [81]  (6.526 ns)
+
+ <State 24>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add59_1_2', winograd.cpp:60) [81]  (6.526 ns)
+
+ <State 25>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add59_1_2', winograd.cpp:60) [81]  (6.526 ns)
+
+ <State 26>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add59_1_2', winograd.cpp:60) [81]  (6.526 ns)
+
+ <State 27>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add1', winograd.cpp:71) [84]  (6.526 ns)
+
+ <State 28>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add1', winograd.cpp:71) [84]  (6.526 ns)
+
+ <State 29>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add1', winograd.cpp:71) [84]  (6.526 ns)
+
+ <State 30>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add1', winograd.cpp:71) [84]  (6.526 ns)
+
+ <State 31>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add2', winograd.cpp:72) [87]  (6.526 ns)
+
+ <State 32>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add2', winograd.cpp:72) [87]  (6.526 ns)
+
+ <State 33>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add2', winograd.cpp:72) [87]  (6.526 ns)
+
+ <State 34>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add2', winograd.cpp:72) [87]  (6.526 ns)
+
+ <State 35>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add2', winograd.cpp:72) [87]  (6.526 ns)
+
+ <State 36>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add6', winograd.cpp:92) [106]  (6.526 ns)
+
+ <State 37>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add6', winograd.cpp:92) [106]  (6.526 ns)
+
+ <State 38>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add6', winograd.cpp:92) [106]  (6.526 ns)
+
+ <State 39>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add6', winograd.cpp:92) [106]  (6.526 ns)
+
+ <State 40>: 6.526ns
+The critical path consists of the following:
+	'load' operation 32 bit ('d_3_load') on local variable 'd_3_load_loc' [65]  (0.000 ns)
+	'fsub' operation 32 bit ('sub160_3', winograd.cpp:80) [101]  (6.526 ns)
+
+ <State 41>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub160_3', winograd.cpp:80) [101]  (6.526 ns)
+
+ <State 42>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub160_3', winograd.cpp:80) [101]  (6.526 ns)
+
+ <State 43>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub160_3', winograd.cpp:80) [101]  (6.526 ns)
+
+ <State 44>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub160_3', winograd.cpp:80) [101]  (6.526 ns)
+
+ <State 45>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add8', winograd.cpp:102) [132]  (6.526 ns)
+
+ <State 46>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add8', winograd.cpp:102) [132]  (6.526 ns)
+
+ <State 47>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add8', winograd.cpp:102) [132]  (6.526 ns)
+
+ <State 48>: 6.526ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('add8', winograd.cpp:102) [132]  (6.526 ns)
+
+ <State 49>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub5', winograd.cpp:102) [134]  (6.526 ns)
+
+ <State 50>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub5', winograd.cpp:102) [134]  (6.526 ns)
+
+ <State 51>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub5', winograd.cpp:102) [134]  (6.526 ns)
+
+ <State 52>: 6.526ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub5', winograd.cpp:102) [134]  (6.526 ns)
+
+ <State 53>: 7.015ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('sub5', winograd.cpp:102) [134]  (6.526 ns)
+	'call' operation 0 bit ('call_ln102', winograd.cpp:102) to 'winograd_Pipeline_compute_Y' [139]  (0.489 ns)
+
+ <State 54>: 2.033ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln102', winograd.cpp:102) to 'winograd_Pipeline_compute_Y' [139]  (2.033 ns)
+
+ <State 55>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty_23', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [147]  (7.300 ns)
+
+ <State 56>: 7.300ns
+The critical path consists of the following:
+	'load' operation 32 bit ('p_loc11_load') on local variable 'p_loc11' [143]  (0.000 ns)
+	bus write operation ('write_ln127', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [149]  (7.300 ns)
+
+ <State 57>: 7.300ns
+The critical path consists of the following:
+	'load' operation 32 bit ('p_loc10_load') on local variable 'p_loc10' [142]  (0.000 ns)
+	bus write operation ('write_ln127', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [151]  (7.300 ns)
+
+ <State 58>: 7.300ns
+The critical path consists of the following:
+	'load' operation 32 bit ('p_loc9_load') on local variable 'p_loc9' [141]  (0.000 ns)
+	bus write operation ('write_ln127', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [153]  (7.300 ns)
+
+ <State 59>: 7.300ns
+The critical path consists of the following:
+	'load' operation 32 bit ('p_loc_load') on local variable 'p_loc' [140]  (0.000 ns)
+	bus write operation ('write_ln127', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [155]  (7.300 ns)
+
+ <State 60>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [156]  (7.300 ns)
+
+ <State 61>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [156]  (7.300 ns)
+
+ <State 62>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [156]  (7.300 ns)
+
+ <State 63>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [156]  (7.300 ns)
+
+ <State 64>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_24', winograd.cpp:127) on port 'gmem' (winograd.cpp:127) [156]  (7.300 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

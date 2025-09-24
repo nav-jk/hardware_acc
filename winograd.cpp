@@ -1,4 +1,4 @@
-#include "matmul_partition.h"
+
 
 // HLS tripcount (optional)
 const unsigned int c_dim = 4;
@@ -36,8 +36,8 @@ void winograd_conv(float* in_g, float* in_d, float* out_y) {
 read_g:
 for (int itr = 0, i = 0, j = 0; itr < 9; itr++, j++) {
 #pragma HLS LOOP_TRIPCOUNT min=9 max=9
-    if (j == 3) { 
-        j = 0; 
+    if (j == 3) {
+        j = 0;
         i++; }
     g[i][j] = in_g[itr];
 }
@@ -46,8 +46,8 @@ for (int itr = 0, i = 0, j = 0; itr < 9; itr++, j++) {
 read_d:
 for (int itr = 0, i = 0, j = 0; itr < 16; itr++, j++) {
 #pragma HLS LOOP_TRIPCOUNT min=16 max=16
-    if (j == 4) { 
-        j = 0; 
+    if (j == 4) {
+        j = 0;
         i++; }
     d[i][j] = in_d[itr];
 }

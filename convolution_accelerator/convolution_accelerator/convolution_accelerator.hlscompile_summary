@@ -1,0 +1,245 @@
+<ENTRY>
+{
+ "thisFile": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/convolution_accelerator.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Sep 23 21:10:50 2025",
+ "timestampMillis": "1758642050919",
+ "buildStep": {
+  "cmdId": "4e46f738-c3a7-4d32-a473-a38e8aac0321",
+  "name": "v++",
+  "logFile": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/logs/convolution_accelerator.steps.log",
+  "commandLine": "/tools/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg --work_dir convolution_accelerator ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg",
+   "--work_dir",
+   "convolution_accelerator"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg",
+    "content": "part=xcvu440_CIV-flgb2377-1-i\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.file=winograd.cpp\nsyn.top=winograd\ntb.file=winograd_test.cpp"
+   }
+  ],
+  "cwd": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Sep 23 21:10:50 2025",
+ "timestampMillis": "1758642050919",
+ "status": {
+  "cmdId": "4e46f738-c3a7-4d32-a473-a38e8aac0321",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Sep 23 21:10:53 2025",
+ "timestampMillis": "1758642053949",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "winograd",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/winograd.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Sep 23 21:10:53 2025",
+ "timestampMillis": "1758642053950",
+ "buildStep": {
+  "cmdId": "9f1683b5-4617-4b3c-b9b7-9b87a56c7d56",
+  "name": "",
+  "logFile": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Sep 23 21:10:53 2025",
+ "timestampMillis": "1758642053950",
+ "status": {
+  "cmdId": "9f1683b5-4617-4b3c-b9b7-9b87a56c7d56",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:10:53 2025",
+ "timestampMillis": "1758642053950",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:10:53 2025",
+ "timestampMillis": "1758642053951",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:10:53 2025",
+ "timestampMillis": "1758642053951",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063218",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063218",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063219",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063219",
+ "status": {
+  "cmdId": "9f1683b5-4617-4b3c-b9b7-9b87a56c7d56",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063337",
+ "status": {
+  "cmdId": "4e46f738-c3a7-4d32-a473-a38e8aac0321",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063368",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/reports/v++_compile_convolution_accelerator_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Sep 23 21:11:03 2025",
+ "timestampMillis": "1758642063369",
+ "report": {
+  "path": "/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/reports/.db/v++_compile_convolution_accelerator_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,268 @@
+
+
+================================================================
+== Synthesis Summary Report of 'winograd'
+================================================================
++ General Information: 
+    * Date:           Tue Sep 23 21:11:02 2025
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        convolution_accelerator
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: virtexu
+    * Target device:  xcvu440_CIV-flgb2377-1-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------+------+------+---------+---------+----------+---------+------+----------+---------+----------+------------+------------+-----+
+    |             Modules            | Issue|      |      Latency      | Iteration|         | Trip |          |         |          |            |            |     |
+    |             & Loops            | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   |    DSP   |     FF     |     LUT    | URAM|
+    +--------------------------------+------+------+---------+---------+----------+---------+------+----------+---------+----------+------------+------------+-----+
+    |+ winograd                      |     -|  0.00|       96|  960.000|         -|       97|     -|        no|  2 (~0%)|  21 (~0%)|  6393 (~0%)|  4539 (~0%)|    -|
+    | + winograd_Pipeline_read_g     |     -|  0.00|       11|  110.000|         -|       10|     -|    rewind|        -|         -|   781 (~0%)|   272 (~0%)|    -|
+    |  o read_g                      |     -|  7.30|        9|   90.000|         2|        1|     9|       yes|        -|         -|           -|           -|    -|
+    | + winograd_Pipeline_read_d     |     -|  0.00|       18|  180.000|         -|       17|     -|    rewind|        -|         -|   878 (~0%)|   273 (~0%)|    -|
+    |  o read_d                      |     -|  7.30|       16|  160.000|         2|        1|    16|       yes|        -|         -|           -|           -|    -|
+    | + winograd_Pipeline_compute_Y  |     -|  5.27|        4|   40.000|         -|        3|     -|    rewind|        -|         -|   285 (~0%)|   183 (~0%)|    -|
+    |  o compute_Y                   |     -|  7.30|        2|   20.000|         1|        1|     2|       yes|        -|         -|           -|           -|    -|
+    +--------------------------------+------+------+---------+---------+----------+---------+------+----------+---------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++------------+------------+---------------+--------+----------+
+| Interface  | Data Width | Address Width | Offset | Register |
++------------+------------+---------------+--------+----------+
+| s_axi_CTRL | 32         | 6             | 16     | 0        |
++------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | in_g_1   | 0x10   | 32    | W      | Data signal of in_g              |                                                                      |
+| s_axi_CTRL | in_g_2   | 0x14   | 32    | W      | Data signal of in_g              |                                                                      |
+| s_axi_CTRL | in_d_1   | 0x1c   | 32    | W      | Data signal of in_d              |                                                                      |
+| s_axi_CTRL | in_d_2   | 0x20   | 32    | W      | Data signal of in_d              |                                                                      |
+| s_axi_CTRL | out_y_1  | 0x28   | 32    | W      | Data signal of out_y             |                                                                      |
+| s_axi_CTRL | out_y_2  | 0x2c   | 32    | W      | Data signal of out_y             |                                                                      |
++------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| in_g     | inout     | float*   |
+| in_d     | inout     | float*   |
+| out_y    | inout     | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+----------+-----------------------------------+
+| Argument | HW Interface | HW Type   | HW Usage | HW Info                           |
++----------+--------------+-----------+----------+-----------------------------------+
+| in_g     | m_axi_gmem   | interface |          | channel=0                         |
+| in_g     | s_axi_CTRL   | register  | offset   | name=in_g_1 offset=0x10 range=32  |
+| in_g     | s_axi_CTRL   | register  | offset   | name=in_g_2 offset=0x14 range=32  |
+| in_d     | m_axi_gmem   | interface |          | channel=0                         |
+| in_d     | s_axi_CTRL   | register  | offset   | name=in_d_1 offset=0x1c range=32  |
+| in_d     | s_axi_CTRL   | register  | offset   | name=in_d_2 offset=0x20 range=32  |
+| out_y    | m_axi_gmem   | interface |          | channel=0                         |
+| out_y    | s_axi_CTRL   | register  | offset   | name=out_y_1 offset=0x28 range=32 |
+| out_y    | s_axi_CTRL   | register  | offset   | name=out_y_2 offset=0x2c range=32 |
++----------+--------------+-----------+----------+-----------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+--------+-------------------+
+| HW Interface | Direction | Length | Width | Loop   | Loop Location     |
++--------------+-----------+--------+-------+--------+-------------------+
+| m_axi_gmem   | read      | 9      | 32    | read_g | winograd.cpp:34:1 |
+| m_axi_gmem   | read      | 16     | 32    | read_d | winograd.cpp:45:1 |
+| m_axi_gmem   | write     | 4      | 32    |        |                   |
++--------------+-----------+--------+-------+--------+-------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+---------------------+-----------+--------------+--------+--------+-------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location     | Direction | Burst Status | Length | Loop   | Loop Location     | Resolution | Problem                                                                                                 |
++--------------+----------+---------------------+-----------+--------------+--------+--------+-------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_gmem   | in_g     | winograd.cpp:40:15  | read      | Widen Fail   |        | read_g | winograd.cpp:34:1 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | in_g     | winograd.cpp:40:15  | read      | Inferred     | 9      | read_g | winograd.cpp:34:1 |            |                                                                                                         |
+| m_axi_gmem   | in_d     | winograd.cpp:50:15  | read      | Widen Fail   |        | read_d | winograd.cpp:45:1 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | in_d     | winograd.cpp:50:15  | read      | Inferred     | 16     | read_d | winograd.cpp:45:1 |            |                                                                                                         |
+| m_axi_gmem   | out_y    | winograd.cpp:124:15 | write     | Widen Fail   |        |        |                   | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | out_y    | winograd.cpp:124:15 | write     | Inferred     | 4      |        |                   |            |                                                                                                         |
++--------------+----------+---------------------+-----------+--------------+--------+--------+-------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------+-----+--------+----------------+--------+----------+---------+
+| Name                                     | DSP | Pragma | Variable       | Op     | Impl     | Latency |
++------------------------------------------+-----+--------+----------------+--------+----------+---------+
+| + winograd                               | 21  |        |                |        |          |         |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add_1          | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add59_1        | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul_1          | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add_1_1        | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add59_1_1      | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U41      | 3   |        | mul_1_1        | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | add_1_2        | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add59_1_2      | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul_1_2        | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add            | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add1           | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul            | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | sub            | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add2           | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul1           | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | add116_1       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add120_1       | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U41      | 3   |        | mul121_1       | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U37 | 2   |        | sub131_1       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | add135_1       | fadd   | fulldsp  | 4       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U42      | 3   |        | mul136_1       | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | sub1           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add3           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | sub160_1       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U37 | 2   |        | add170_1       | fadd   | fulldsp  | 4       |
+|   fsub_32ns_32ns_32_5_full_dsp_1_U38     | 2   |        | sub160_2       | fsub   | fulldsp  | 4       |
+|   fadd_32ns_32ns_32_5_full_dsp_1_U39     | 2   |        | add170_2       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | sub160_3       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add170_3       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | sub2           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add4           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | add5           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add6           | fadd   | fulldsp  | 4       |
+|   xor_ln93_2_fu_574_p2                   |     |        | xor_ln93_2     | xor    | auto     | 0       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U37 | 2   |        | sub209_1       | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | add219_1       | fadd   | fulldsp  | 4       |
+|   fsub_32ns_32ns_32_5_full_dsp_1_U38     | 2   |        | add230_1       | fsub   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | add234_1       | fadd   | fulldsp  | 4       |
+|   xor_ln93_fu_609_p2                     |     |        | xor_ln93       | xor    | auto     | 0       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul2           | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U41      | 3   |        | mul266_s       | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul266_2       | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U40      | 3   |        | mul266_3       | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U42      | 3   |        | mul266_1       | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U41      | 3   |        | mul266_1_1     | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U42      | 3   |        | mul266_1_2     | fmul   | maxdsp   | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U41      | 3   |        | mul266_1_3     | fmul   | maxdsp   | 3       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add7           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | add8           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | sub4           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U34 | 2   |        | sub5           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | sub6           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U35 | 2   |        | sub7           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U37 | 2   |        | add9           | fadd   | fulldsp  | 4       |
+|   faddfsub_32ns_32ns_32_5_full_dsp_1_U36 | 2   |        | add10          | fadd   | fulldsp  | 4       |
+|  + winograd_Pipeline_read_g              | 0   |        |                |        |          |         |
+|    icmp_ln34_fu_225_p2                   |     |        | icmp_ln34      | seteq  | auto     | 0       |
+|    add_ln34_fu_231_p2                    |     |        | add_ln34       | add    | fabric   | 0       |
+|    icmp_ln36_fu_243_p2                   |     |        | icmp_ln36      | seteq  | auto     | 0       |
+|    add_ln38_fu_249_p2                    |     |        | add_ln38       | add    | fabric   | 0       |
+|    j_1_fu_255_p3                         |     |        | j_1            | select | auto_sel | 0       |
+|    i_1_fu_263_p3                         |     |        | i_1            | select | auto_sel | 0       |
+|    j_2_fu_282_p2                         |     |        | j_2            | add    | fabric   | 0       |
+|  + winograd_Pipeline_read_d              | 0   |        |                |        |          |         |
+|    icmp_ln45_fu_268_p2                   |     |        | icmp_ln45      | seteq  | auto     | 0       |
+|    add_ln45_fu_274_p2                    |     |        | add_ln45       | add    | fabric   | 0       |
+|    icmp_ln47_fu_286_p2                   |     |        | icmp_ln47      | seteq  | auto     | 0       |
+|    add_ln49_fu_292_p2                    |     |        | add_ln49       | add    | fabric   | 0       |
+|    j_fu_298_p3                           |     |        | j              | select | auto_sel | 0       |
+|    i_fu_307_p3                           |     |        | i              | select | auto_sel | 0       |
+|    j_3_fu_325_p2                         |     |        | j_3            | add    | fabric   | 0       |
+|  + winograd_Pipeline_compute_Y           | 0   |        |                |        |          |         |
+|    icmp_ln108_fu_124_p2                  |     |        | icmp_ln108     | seteq  | auto     | 0       |
+|    add_ln108_fu_130_p2                   |     |        | add_ln108      | add    | fabric   | 0       |
+|    cmp287_fu_148_p2                      |     |        | cmp287         | seteq  | auto     | 0       |
+|    select_ln111_fu_154_p3                |     |        | select_ln111   | select | auto_sel | 0       |
+|    select_ln111_1_fu_162_p3              |     |        | select_ln111_1 | select | auto_sel | 0       |
+|    select_ln111_2_fu_170_p3              |     |        | select_ln111_2 | select | auto_sel | 0       |
+|    select_ln111_3_fu_178_p3              |     |        | select_ln111_3 | select | auto_sel | 0       |
++------------------------------------------+-----+--------+----------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name           | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                |           |           |      |      |        |          |      |         | Banks            |
++----------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + winograd     |           |           | 2    | 0    |        |          |      |         |                  |
+|   CTRL_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
+|   gmem_m_axi_U | interface | m_axi     | 2    |      |        |          |      |         |                  |
++----------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------+-------------------------------------+
+| Type            | Options                           | Location                            |
++-----------------+-----------------------------------+-------------------------------------+
+| INTERFACE       | m_axi port=in_g depth=9           | winograd.cpp:7 in winograd, in_g    |
+| INTERFACE       | m_axi port=in_d depth=16          | winograd.cpp:8 in winograd, in_d    |
+| INTERFACE       | m_axi port=out_y depth=4          | winograd.cpp:9 in winograd, out_y   |
+| INTERFACE       | s_axilite port=return bundle=CTRL | winograd.cpp:10 in winograd, return |
+| ARRAY_PARTITION | variable=g dim=2 complete         | winograd.cpp:23 in winograd, g      |
+| ARRAY_PARTITION | variable=Gg dim=2 complete        | winograd.cpp:24 in winograd, Gg     |
+| ARRAY_PARTITION | variable=U complete               | winograd.cpp:25 in winograd, U      |
+| ARRAY_PARTITION | variable=d dim=1 complete         | winograd.cpp:26 in winograd, d      |
+| ARRAY_PARTITION | variable=Bd dim=1 complete        | winograd.cpp:27 in winograd, Bd     |
+| ARRAY_PARTITION | variable=V complete               | winograd.cpp:28 in winograd, V      |
+| ARRAY_PARTITION | variable=M complete               | winograd.cpp:29 in winograd, M      |
+| ARRAY_PARTITION | variable=Y complete               | winograd.cpp:30 in winograd, Y      |
+| LOOP_TRIPCOUNT  | min=9 max=9                       | winograd.cpp:35 in winograd         |
+| LOOP_TRIPCOUNT  | min=16 max=16                     | winograd.cpp:46 in winograd         |
+| UNROLL          |                                   | winograd.cpp:56 in winograd         |
+| UNROLL          |                                   | winograd.cpp:58 in winograd         |
+| UNROLL          |                                   | winograd.cpp:69 in winograd         |
+| UNROLL          |                                   | winograd.cpp:79 in winograd         |
+| UNROLL          |                                   | winograd.cpp:89 in winograd         |
+| UNROLL          |                                   | winograd.cpp:99 in winograd         |
+| UNROLL          |                                   | winograd.cpp:101 in winograd        |
+| UNROLL          |                                   | winograd.cpp:110 in winograd        |
+| UNROLL          |                                   | winograd.cpp:121 in winograd        |
+| UNROLL          |                                   | winograd.cpp:123 in winograd        |
++-----------------+-----------------------------------+-------------------------------------+
+
+

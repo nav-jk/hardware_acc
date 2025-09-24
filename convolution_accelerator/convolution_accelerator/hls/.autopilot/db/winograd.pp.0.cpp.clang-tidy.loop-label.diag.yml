@@ -1,0 +1,40 @@
+---
+MainSourceFile:  /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_57_1:  '
+    FileOffset:      57
+    FilePath:        winograd.cpp
+    Replacements:    
+      - FilePath:        /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp
+        Offset:          10887
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_57_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_100_2:  '
+    FileOffset:      100
+    FilePath:        winograd.cpp
+    Replacements:    
+      - FilePath:        /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp
+        Offset:          11874
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_100_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_109_3:  '
+    FileOffset:      109
+    FilePath:        winograd.cpp
+    Replacements:    
+      - FilePath:        /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp
+        Offset:          12016
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_109_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_122_4:  '
+    FileOffset:      122
+    FilePath:        winograd.cpp
+    Replacements:    
+      - FilePath:        /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp
+        Offset:          12397
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_122_4: '
+...

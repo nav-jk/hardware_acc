@@ -1,0 +1,26 @@
+<pragmas>
+<pragma file="winograd.cpp" line="121" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="123" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="110" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="99" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="101" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="89" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="79" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="69" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="56" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="58" pragmaType="unroll" parentfunction="winograd" factor="-1" skip_exit_check="0"/>
+<pragma file="winograd.cpp" line="46" pragmaType="loop_tripcount" parentfunction="winograd" min="16" max="16" avg="16"/>
+<pragma file="winograd.cpp" line="35" pragmaType="loop_tripcount" parentfunction="winograd" min="9" max="9" avg="9"/>
+<pragma file="winograd.cpp" line="7" pragmaType="interface" parentfunction="winograd" mode="m_axi" port="in_g" bundle="" offset="" name="" depth="9" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="winograd.cpp" line="8" pragmaType="interface" parentfunction="winograd" mode="m_axi" port="in_d" bundle="" offset="" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="winograd.cpp" line="9" pragmaType="interface" parentfunction="winograd" mode="m_axi" port="out_y" bundle="" offset="" name="" depth="4" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="winograd.cpp" line="10" pragmaType="interface" parentfunction="winograd" mode="s_axilite" port="" bundle="CTRL" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="winograd.cpp" line="23" pragmaType="array_partition" parentfunction="winograd" dim="2" factor="0" mode="complete" dynamic="0" variable="g"/>
+<pragma file="winograd.cpp" line="24" pragmaType="array_partition" parentfunction="winograd" dim="2" factor="0" mode="complete" dynamic="0" variable="Gg"/>
+<pragma file="winograd.cpp" line="25" pragmaType="array_partition" parentfunction="winograd" dim="1" factor="0" mode="complete" dynamic="0" variable="U"/>
+<pragma file="winograd.cpp" line="26" pragmaType="array_partition" parentfunction="winograd" dim="1" factor="0" mode="complete" dynamic="0" variable="d"/>
+<pragma file="winograd.cpp" line="27" pragmaType="array_partition" parentfunction="winograd" dim="1" factor="0" mode="complete" dynamic="0" variable="Bd"/>
+<pragma file="winograd.cpp" line="28" pragmaType="array_partition" parentfunction="winograd" dim="1" factor="0" mode="complete" dynamic="0" variable="V"/>
+<pragma file="winograd.cpp" line="29" pragmaType="array_partition" parentfunction="winograd" dim="1" factor="0" mode="complete" dynamic="0" variable="M"/>
+<pragma file="winograd.cpp" line="30" pragmaType="array_partition" parentfunction="winograd" dim="1" factor="0" mode="complete" dynamic="0" variable="Y"/>
+</pragmas>

@@ -1,0 +1,20 @@
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:217:2: warning: Added loop label VITIS_LOOP_57_1:   [xilinx-label-all-loops]
+ for (int j = 0; j < 3; j++) {
+ ^~~
+ VITIS_LOOP_57_1: 
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:217:2: note: FIX-IT applied suggested code changes
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:260:2: warning: Added loop label VITIS_LOOP_100_2:   [xilinx-label-all-loops]
+ for(int j=0;j<4;j++){
+ ^~~
+ VITIS_LOOP_100_2: 
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:260:2: note: FIX-IT applied suggested code changes
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:269:9: warning: Added loop label VITIS_LOOP_109_3:   [xilinx-label-all-loops]
+        for (int j = 0; j < 2; j++) {
+        ^~~
+        VITIS_LOOP_109_3: 
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:269:9: note: FIX-IT applied suggested code changes
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:282:2: warning: Added loop label VITIS_LOOP_122_4:   [xilinx-label-all-loops]
+ for(int j=0;j<2;j++){
+ ^~~
+ VITIS_LOOP_122_4: 
+/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/hls/.autopilot/db/winograd.pp.0.cpp:282:2: note: FIX-IT applied suggested code changes

@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator",
+    "arguments": [
+      "/tools/Xilinx/2025.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/2025.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/2025.1/Vitis/common/technology/autopilot",
+      "-fhlstoplevel=winograd",
+      "-c",
+      "/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/winograd.cpp"
+    ],
+    "file": "/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/winograd.cpp"
+  },
+  {
+    "directory": "/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator",
+    "arguments": [
+      "/tools/Xilinx/2025.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/2025.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=/tools/Xilinx/2025.1/Vitis/include",
+      "-c",
+      "/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/winograd_test.cpp"
+    ],
+    "file": "/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/winograd_test.cpp"
+  }
+]
