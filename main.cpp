@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     // ---- Input ----
-    float g[3][3] = { {1, 0, -1},
+    float g[3][3] = { {2, 0, -1},
                       {0, 1, 0},
                       {-1, 0, 1} };
 

@@ -1,4 +1,4 @@
-obj/winograd.o: ../../../../winograd.cpp \
+obj/winograd.o: ../../../../winograd.cpp ../../../../winograd.h \
   /tools/Xilinx/2025.1/Vitis/include/ap_fixed.h \
   /tools/Xilinx/2025.1/Vitis/include/etc/ap_common.h \
   /tools/Xilinx/2025.1/Vitis/include/etc/ap_decl.h \
@@ -16,5 +16,4 @@ obj/winograd.o: ../../../../winograd.cpp \
   /tools/Xilinx/2025.1/Vitis/include/etc/ap_int_ref.h \
   /tools/Xilinx/2025.1/Vitis/include/etc/ap_int_special.h \
   /tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_ref.h \
-  /tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_special.h \
-  ../../../../winograd.h
+  /tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_special.h

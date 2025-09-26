@@ -1,0 +1,71 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Sep 26 18:01:53 2025
+# Process ID         : 5987
+# Current directory  : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip
+# Command line       : vivado -notrace -mode batch -source run_ippack.tcl
+# Log file           : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/vivado.log
+# Journal file       : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/vivado.jou
+# Running On         : nirmal-hp
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.1 LTS
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+# CPU Frequency      : 2659.973 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 4
+# Host memory        : 7954 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12249 MB
+# Available Virtual  : 7496 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/hls_data.json outdir=/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip srcdir=/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls ippack_options_dict= ippack_options_dict=
+INFO: Copied 1 ipmisc file(s) to /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/misc
+INFO: Copied 11 verilog file(s) to /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/verilog
+INFO: Copied 11 vhdl file(s) to /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/vhdl
+INFO: Copied 10 swdriver file(s) to /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/drivers
+Generating 4 subcores in /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/subcore_prj:
+impl/misc/winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip.tcl
+impl/misc/winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
+impl/misc/winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl
+impl/misc/winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: Using COE_DIR=/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/verilog
+INFO: Generating winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: Done generating winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: Generating winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: Done generating winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: Generating winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip via file impl/misc/winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: Done generating winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip via file impl/misc/winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl
+INFO: Generating winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: Done generating winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
+INFO: Found 1 unique subcore IP: xilinx.com:ip:floating_point:7.1
+INFO: Copied 4 subcore files: /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/ip/winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip/winograd_fadd_32ns_32ns_32_5_full_dsp_1_ip.xci /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/ip/winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip/winograd_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.xci /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/ip/winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip/winograd_fsub_32ns_32ns_32_5_full_dsp_1_ip.xci /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/ip/winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip/winograd_fmul_32ns_32ns_32_4_max_dsp_1_ip.xci
+INFO: Import ports from HDL: /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/hdl/vhdl/winograd.vhd (winograd)
+INFO: Add axi4lite interface s_axi_CTRL
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst_n
+INFO: Add interrupt interface interrupt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+INFO: Add axi4full interface m_axi_gmem
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/component.xml
+INFO: Created IP archive /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/xilinx_com_hls_winograd_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 26 18:02:06 2025...
