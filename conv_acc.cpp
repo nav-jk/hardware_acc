@@ -1,5 +1,3 @@
-#include "matmul_partition.h"
-
 // HLS tripcount (optional)
 const unsigned int c_dim = 4;
 
@@ -59,8 +57,8 @@ compute_Gg:
         for (int j = 0; j < 3; j++) {
 #pragma HLS UNROLL
             if (i == 0)       Gg[i][j] = g[0][j];
-            else if (i == 1)  Gg[i][j] = 0.5f * (g[0][j] + g[1][j] + g[2][j]);
-            else if (i == 2)  Gg[i][j] = 0.5f * (g[0][j] - g[1][j] + g[2][j]);
+            else if (i == 1)  Gg[i][j] = (g[0][j] + g[1][j] + g[2][j]) / 2;
+            else if (i == 2)  Gg[i][j] = (g[0][j] - g[1][j] + g[2][j]) / 2;
             else               Gg[i][j] = g[2][j];
         }
     }
@@ -70,8 +68,8 @@ compute_U:
     for(int i=0;i<4;i++){
 #pragma HLS UNROLL
         U[i][0] = Gg[i][0];
-        U[i][1] = 0.5f*(Gg[i][0] + Gg[i][1] + Gg[i][2]);
-        U[i][2] = 0.5f*(Gg[i][0] - Gg[i][1] + Gg[i][2]);
+        U[i][1] = (Gg[i][0] + Gg[i][1] + Gg[i][2])/2;
+        U[i][2] = (Gg[i][0] - Gg[i][1] + Gg[i][2])/2;
         U[i][3] = Gg[i][2];
     }
 
@@ -85,15 +83,16 @@ compute_Bd:
         Bd[3][j] = d[1][j]-d[3][j];
     }
 
-    // ---- Step 2b: V = Bd * B ----
+// ---- Step 2b: V = Bd * B ----
 compute_V:
     for(int i=0;i<4;i++){
 #pragma HLS UNROLL
-        V[i][0] = Bd[i][0]-Bd[i][2];
-        V[i][1] = Bd[i][1]+Bd[i][2];
-        V[i][2] = -Bd[i][0]+Bd[i][1]+Bd[i][2];
-        V[i][3] = -Bd[i][3];
+        V[i][0] = Bd[i][0] - Bd[i][2];
+        V[i][1] = Bd[i][1] + Bd[i][2];
+        V[i][2] = -Bd[i][1] + Bd[i][2];     // <-- fixed
+        V[i][3] = Bd[i][1] - Bd[i][3];      // <-- fixed
     }
+
 
     // ---- Step 3: Elementwise multiply M = U .* V ----
 compute_M:
