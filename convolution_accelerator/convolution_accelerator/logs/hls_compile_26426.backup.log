@@ -1,0 +1,27 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=winograd.cpp' from /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/winograd.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=winograd_test.cpp' from /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/winograd_test.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=winograd' from /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xcvu440_CIV-flgb2377-1-i' from /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu440_CIV-flgb2377-1-i'
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/nirmal-thomas/Documents/dev/hls_dev/convolution_accelerator/convolution_accelerator/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.25 seconds. CPU system time: 0.25 seconds. Elapsed time: 1.38 seconds; current allocated memory: 244.258 MB.
+INFO: [HLS 200-10] Analyzing design file 'winograd.cpp' ... 
+WARNING: [HLS 200-1986] Could not apply TOP directive, invalid function, label, or variable (:0)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.28 seconds. CPU system time: 0.28 seconds. Elapsed time: 0.96 seconds; current allocated memory: 246.426 MB.
+ERROR: [HLS 214-157] Top function not found: there is no function named 'winograd'
+error: Top function not found: there is no function named 'winograd'
+ERROR: Error in opt
+INFO: [HLS 200-112] Total CPU user time: 3.73 seconds. Total CPU system time: 0.74 seconds. Total elapsed time: 5.1 seconds; peak allocated memory: 246.680 MB.

@@ -1,0 +1,1 @@
+void winograd(float* g, float* d, float* out);

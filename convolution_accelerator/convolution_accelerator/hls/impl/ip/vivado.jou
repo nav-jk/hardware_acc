@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Sep 26 18:01:53 2025
+# Process ID         : 5987
+# Current directory  : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip
+# Command line       : vivado -notrace -mode batch -source run_ippack.tcl
+# Log file           : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/vivado.log
+# Journal file       : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/hls/impl/ip/vivado.jou
+# Running On         : nirmal-hp
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.1 LTS
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+# CPU Frequency      : 2659.973 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 4
+# Host memory        : 7954 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12249 MB
+# Available Virtual  : 7496 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

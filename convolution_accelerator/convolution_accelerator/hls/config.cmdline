@@ -1,0 +1,3 @@
+relativeroot=/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator
+original_argv=--mode hls --impl --config /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg --work_dir convolution_accelerator 
+

@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Sep 26 18:05:24 2025
+# Process ID         : 7473
+# Current directory  : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc
+# Command line       : vivado
+# Log file           : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/vivado.log
+# Journal file       : /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/vivado.jou
+# Running On         : nirmal-hp
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.1 LTS
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+# CPU Frequency      : 3756.712 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 4
+# Host memory        : 7954 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12249 MB
+# Available Virtual  : 7698 MB
+#-----------------------------------------------------------
+start_gui
+ERROR: [Common 17-211] Error loading jvm.
+launch_license_manager
+invalid command name "launch_license_manager"
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 26 18:06:23 2025...

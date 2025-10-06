@@ -1,0 +1,22 @@
+{
+  "0": {
+    "basicblocks": 19,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 10,
+    "file": "winograd.cpp",
+    "fileloc": 6,
+    "instructions": 233,
+    "loads": {
+      "L": 21,
+      "T": 2
+    },
+    "memory_accesses": 14,
+    "name": "winograd",
+    "stores": {
+      "L": 11,
+      "T": 4
+    },
+    "total_instructions": 233
+  }
+}

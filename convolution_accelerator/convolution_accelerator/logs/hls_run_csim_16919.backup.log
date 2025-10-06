@@ -1,0 +1,581 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=winograd.cpp' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/winograd.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=winograd_test.cpp' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/winograd_test.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=winograd' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xcvu440_CIV-flgb2377-1-i' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu440_CIV-flgb2377-1-i'
+INFO: [HLS 200-1465] Applying config ini 'csim.clean=1' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'csim.setup=1' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(5)
+INFO: [HLS 200-1465] Applying config ini 'sim.O=1' from /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/hls_config.cfg(10)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/nirmal-thomas/Documents/dev/hls_dev/hardware_acc/convolution_accelerator/convolution_accelerator/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building optimized C Simulation binaries
+   Compiling ../../../../winograd_test.cpp in release mode
+   Compiling ../../../../winograd.cpp in release mode
+../../../../winograd.cpp:64:47: error: use of overloaded operator '*' is ambiguous (with operand types 'float' and 'typename RType<32, 16, true>::plus' (aka 'ap_fixed<34, 18>'))
+            else if (i == 1)  Gg[i][j] = 0.5f * (g[0][j] + g[1][j] + g[2][j]);
+                                         ~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2373:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(bool, 1, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2374:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(char, 8, CHAR_IS_SIGNED)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2375:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(signed char, 8, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2376:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned char, 8, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2377:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(short, _AP_SIZE_short, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2378:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned short, _AP_SIZE_short, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2379:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(int, _AP_SIZE_int, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2380:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned int, _AP_SIZE_int, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2381:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(long, _AP_SIZE_long, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2382:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned long, _AP_SIZE_long, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2383:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2384:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, float)
+            else if (i == 1)  Gg[i][j] = 0.5f * (g[0][j] + g[1][j] + g[2][j]);
+                                              ^
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, double)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, long double)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, __float128)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, int)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, long long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, __int128)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, unsigned int)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, unsigned long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, unsigned long long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(float, unsigned __int128)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, float)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, double)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, long double)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, __float128)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, int)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, long long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, __int128)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, unsigned int)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, unsigned long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, unsigned long long)
+../../../../winograd.cpp:64:47: note: built-in candidate operator*(double, unsigned __int128)
+../../../../winograd.cpp:65:47: error: use of overloaded operator '*' is ambiguous (with operand types 'float' and 'typename RType<32, 16, true>::plus' (aka 'ap_fixed<34, 18>'))
+            else if (i == 2)  Gg[i][j] = 0.5f * (g[0][j] - g[1][j] + g[2][j]);
+                                         ~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2373:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(bool, 1, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2374:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(char, 8, CHAR_IS_SIGNED)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2375:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(signed char, 8, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2376:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned char, 8, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2377:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(short, _AP_SIZE_short, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2378:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned short, _AP_SIZE_short, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2379:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(int, _AP_SIZE_int, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2380:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned int, _AP_SIZE_int, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2381:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(long, _AP_SIZE_long, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2382:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned long, _AP_SIZE_long, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2383:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2384:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, float)
+            else if (i == 2)  Gg[i][j] = 0.5f * (g[0][j] - g[1][j] + g[2][j]);
+                                              ^
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, double)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, long double)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, __float128)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, int)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, long long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, __int128)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, unsigned int)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, unsigned long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, unsigned long long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(float, unsigned __int128)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, float)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, double)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, long double)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, __float128)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, int)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, long long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, __int128)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, unsigned int)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, unsigned long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, unsigned long long)
+../../../../winograd.cpp:65:47: note: built-in candidate operator*(double, unsigned __int128)
+../../../../winograd.cpp:75:23: error: use of overloaded operator '*' is ambiguous (with operand types 'float' and 'typename RType<32, 16, true>::plus' (aka 'ap_fixed<34, 18>'))
+        U[i][1] = 0.5f*(Gg[i][0] + Gg[i][1] + Gg[i][2]);
+                  ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2373:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(bool, 1, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2374:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(char, 8, CHAR_IS_SIGNED)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2375:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(signed char, 8, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2376:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned char, 8, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2377:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(short, _AP_SIZE_short, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2378:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned short, _AP_SIZE_short, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2379:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(int, _AP_SIZE_int, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2380:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned int, _AP_SIZE_int, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2381:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(long, _AP_SIZE_long, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2382:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned long, _AP_SIZE_long, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2383:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2384:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, float)
+        U[i][1] = 0.5f*(Gg[i][0] + Gg[i][1] + Gg[i][2]);
+                      ^
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, double)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, long double)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, __float128)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, int)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, long long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, __int128)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, unsigned int)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, unsigned long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, unsigned long long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(float, unsigned __int128)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, float)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, double)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, long double)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, __float128)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, int)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, long long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, __int128)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, unsigned int)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, unsigned long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, unsigned long long)
+../../../../winograd.cpp:75:23: note: built-in candidate operator*(double, unsigned __int128)
+../../../../winograd.cpp:76:23: error: use of overloaded operator '*' is ambiguous (with operand types 'float' and 'typename RType<32, 16, true>::plus' (aka 'ap_fixed<34, 18>'))
+        U[i][2] = 0.5f*(Gg[i][0] - Gg[i][1] + Gg[i][2]);
+                  ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2373:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(bool, 1, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2374:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(char, 8, CHAR_IS_SIGNED)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2375:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(signed char, 8, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2376:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned char, 8, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2377:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(short, _AP_SIZE_short, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2378:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned short, _AP_SIZE_short, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2379:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(int, _AP_SIZE_int, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2380:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned int, _AP_SIZE_int, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2381:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(long, _AP_SIZE_long, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2382:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(unsigned long, _AP_SIZE_long, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2383:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_slong, _AP_SIZE_ap_slong, true)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2384:1: note: candidate function [with _AP_W = 34, _AP_I = 18, _AP_S = true, _AP_Q = AP_TRN, _AP_O = AP_WRAP, _AP_N = 0]
+ALL_AF_OP_WITH_INT(ap_ulong, _AP_SIZE_ap_slong, false)
+^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2348:3: note: expanded from macro 'ALL_AF_OP_WITH_INT'
+  AF_BIN_OP_WITH_INT(*, C_TYPE, (BITS), (SIGN), mult)     \
+  ^
+/tools/Xilinx/2025.1/Vitis/include/etc/ap_fixed_base.h:2303:3: note: expanded from macro 'AF_BIN_OP_WITH_INT'
+  operator BIN_OP(                                                          \
+  ^
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, float)
+        U[i][2] = 0.5f*(Gg[i][0] - Gg[i][1] + Gg[i][2]);
+                      ^
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, double)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, long double)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, __float128)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, int)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, long long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, __int128)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, unsigned int)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, unsigned long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, unsigned long long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(float, unsigned __int128)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, float)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, double)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, long double)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, __float128)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, int)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, long long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, __int128)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, unsigned int)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, unsigned long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, unsigned long long)
+../../../../winograd.cpp:76:23: note: built-in candidate operator*(double, unsigned __int128)
+4 errors generated.
+make: *** [csim.mk:94: obj/winograd.o] Error 1
+ERROR: [SIM 211-100] CSim file generation failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 5
+INFO: [HLS 200-112] Total CPU user time: 3.4 seconds. Total CPU system time: 0.41 seconds. Total elapsed time: 3.85 seconds; peak allocated memory: 244.402 MB.

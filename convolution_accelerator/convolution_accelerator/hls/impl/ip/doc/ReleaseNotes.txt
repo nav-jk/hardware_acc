@@ -1,0 +1,6 @@
+
+Family       : virtexu
+Device       : xcvu440_CIV
+Package      : -flgb2377
+Speed Grade  : -1-i
+Clock Period : 10
